@@ -31,9 +31,9 @@ export default function Header() {
 
         <nav className="primary-nav" aria-label="Primary">
           <Link href="/#how">How it works</Link>
-          <Link href="/#industries">Industries</Link>
-          <Link href="/#developers">Developers</Link>
-          <Link href="/#pricing">Pricing</Link>
+          <Link href="/consumers">For Consumers</Link>
+          <Link href="/merchants">For Merchants</Link>
+          <Link href="/partners">Partners</Link>
           <Link href="/team">Team</Link>
         </nav>
 
@@ -63,21 +63,11 @@ export default function Header() {
         id="mobile-nav"
         aria-label="Mobile"
       >
-        <Link href="/#how" onClick={close}>
-          How it works
-        </Link>
-        <Link href="/#industries" onClick={close}>
-          Industries
-        </Link>
-        <Link href="/#developers" onClick={close}>
-          Developers
-        </Link>
-        <Link href="/#pricing" onClick={close}>
-          Pricing
-        </Link>
-        <Link href="/team" onClick={close}>
-          Team
-        </Link>
+        <Link href="/#how" onClick={close}>How it works</Link>
+        <Link href="/consumers" onClick={close}>For Consumers</Link>
+        <Link href="/merchants" onClick={close}>For Merchants</Link>
+        <Link href="/partners" onClick={close}>Partners</Link>
+        <Link href="/team" onClick={close}>Team</Link>
         <Link href="/#signin" onClick={close}>
           Sign in
         </Link>

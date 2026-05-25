@@ -30,23 +30,23 @@ export default function Footer() {
         <nav className="footer-col" aria-label="Product">
           <p className="caps-label">Product</p>
           <Link href="/#how">How it works</Link>
-          <Link href="/#why">Why Verix</Link>
           <Link href="/#developers">Developers</Link>
           <Link href="/#pricing">Pricing</Link>
+          <Link href="/#faq">FAQ</Link>
         </nav>
 
-        <nav className="footer-col" aria-label="Industries">
-          <p className="caps-label">Industries</p>
-          <Link href="/#industries">Retail</Link>
-          <Link href="/#industries">Gaming</Link>
-          <Link href="/#industries">Restaurants</Link>
-          <Link href="/#industries">Healthcare</Link>
+        <nav className="footer-col" aria-label="Use Cases">
+          <p className="caps-label">Use Cases</p>
+          <Link href="/consumers">For Consumers</Link>
+          <Link href="/merchants">For Merchants</Link>
+          <Link href="/partners">For Partners</Link>
+          <Link href="/#industries">Industries</Link>
         </nav>
 
         <nav className="footer-col" aria-label="Company">
           <p className="caps-label">Company</p>
           <Link href="/team">Team</Link>
-          <Link href="/#faq">FAQ</Link>
+          <Link href="/partners">Investors</Link>
           <Link href="/#pricing">Talk to sales</Link>
           <Link href="/#signin">Sign in</Link>
         </nav>

@@ -681,6 +681,243 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
   .team-card:nth-child(5) { grid-column: span 1; }
 }
 
+/* ============================================================
+   CONSUMER PAGE — enroll cards, privacy/trust section
+   ============================================================ */
+.enroll-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+}
+.enroll-card {
+  background: var(--white); border: 1px solid var(--hairline);
+  border-radius: var(--radius); padding: 36px 28px 32px;
+  transition: border-color .18s ease, transform .18s ease;
+}
+.enroll-card:hover { border-color: rgba(91,71,224,0.35); transform: translateY(-3px); }
+.enroll-num {
+  display: flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--violet-mist); color: var(--violet);
+  font-weight: 700; font-size: 18px; margin-bottom: 24px;
+}
+.enroll-title { font-weight: 600; font-size: 19px; letter-spacing: -0.015em; margin-bottom: 10px; }
+.enroll-body  { font-size: 14px; line-height: 1.65; color: var(--slate); }
+
+/* privacy / dark-bg section */
+.section-dark {
+  background: var(--ink);
+  background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 8px 8px;
+}
+.privacy-split {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 6vw, 80px); align-items: center;
+}
+.trust-points { display: flex; flex-direction: column; gap: 24px; margin-top: 32px; }
+.trust-point  { display: flex; gap: 16px; align-items: flex-start; }
+.trust-icon {
+  width: 40px; height: 40px; flex: none; border-radius: 10px;
+  background: rgba(91,71,224,0.2);
+  display: flex; align-items: center; justify-content: center;
+}
+.trust-icon svg { width: 18px; height: 18px; color: #b3a9f2; }
+.trust-point-title { font-weight: 600; font-size: 16px; color: var(--white); margin-bottom: 5px; }
+.trust-point-body  { font-size: 14px; color: #9a9aa8; line-height: 1.6; }
+
+/* compliance badge pills */
+.badge-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
+.compliance-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 14px; border-radius: var(--radius-pill);
+  font-weight: 600; font-size: 12px; letter-spacing: 0.05em; white-space: nowrap;
+}
+.compliance-badge.light { border: 1px solid var(--hairline); background: var(--white); color: var(--ink); }
+.compliance-badge.dark  {
+  border: 1px solid rgba(179,169,242,0.25);
+  background: rgba(91,71,224,0.12); color: #b3a9f2;
+}
+
+/* ============================================================
+   PARTNERS PAGE — market numbers, traction, biz model
+   ============================================================ */
+.market-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  margin-bottom: clamp(40px, 5vw, 64px);
+}
+.market-card {
+  background: var(--white); border: 1px solid var(--hairline);
+  border-radius: var(--radius); padding: 36px 28px;
+  transition: border-color .18s ease, transform .18s ease;
+}
+.market-card:hover { border-color: rgba(91,71,224,0.35); transform: translateY(-3px); }
+.market-num {
+  font-family: var(--mono); font-weight: 500;
+  font-size: clamp(40px, 5vw, 62px);
+  line-height: 1; letter-spacing: -0.03em;
+  color: var(--ink); margin-bottom: 14px;
+}
+.market-num sup { font-size: 0.42em; color: var(--violet); vertical-align: super; }
+.market-label { font-size: 14px; color: var(--slate); line-height: 1.5; max-width: 24ch; }
+
+.traction-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.traction-card {
+  background: var(--white); border: 1px solid var(--hairline);
+  border-radius: var(--radius); padding: 32px 28px;
+  transition: border-color .18s ease, transform .18s ease;
+}
+.traction-card:hover { border-color: rgba(91,71,224,0.35); transform: translateY(-3px); }
+.traction-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 12px; background: var(--violet-mist);
+  border-radius: var(--radius-pill);
+  font-weight: 600; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--violet); margin-bottom: 18px;
+}
+.traction-title { font-weight: 600; font-size: clamp(20px, 1.8vw, 24px); letter-spacing: -0.015em; margin-bottom: 12px; }
+.traction-body  { font-size: 14px; line-height: 1.6; color: var(--slate); margin-bottom: 22px; }
+.traction-stats {
+  display: flex; flex-wrap: wrap; gap: 24px;
+  padding-top: 18px; border-top: 1px solid var(--hairline);
+}
+.traction-stat-num   { font-family: var(--mono); font-weight: 500; font-size: 20px; letter-spacing: -0.02em; color: var(--ink); }
+.traction-stat-label { font-size: 12px; color: var(--slate); margin-top: 3px; }
+
+/* business model — dark cards */
+.biz-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.biz-card {
+  background: var(--ink); border-radius: var(--radius); padding: 34px 28px;
+  transition: transform .18s ease;
+}
+.biz-card:hover { transform: translateY(-3px); }
+.biz-num {
+  font-family: var(--mono); font-weight: 500;
+  font-size: clamp(38px, 4.5vw, 54px);
+  line-height: 1; letter-spacing: -0.03em;
+  color: var(--white); margin-bottom: 12px;
+}
+.biz-num sup { font-size: 0.44em; color: #b3a9f2; vertical-align: super; }
+.biz-label { font-size: 14px; color: #9a9aa8; line-height: 1.5; max-width: 22ch; }
+
+/* ============================================================
+   MERCHANTS PAGE — value bar, integration table, pilot card
+   ============================================================ */
+.value-bar {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--hairline); border-radius: var(--radius);
+  overflow: hidden; background: var(--white);
+  margin-top: clamp(40px, 5vw, 64px);
+}
+.value-bar-item { padding: 28px 30px; border-right: 1px solid var(--hairline); }
+.value-bar-item:last-child { border-right: 0; }
+.value-bar-num {
+  font-family: var(--mono); font-weight: 500;
+  font-size: clamp(28px, 3.2vw, 40px);
+  line-height: 1; letter-spacing: -0.025em;
+  color: var(--ink); margin-bottom: 8px;
+}
+.value-bar-label { font-size: 13px; color: var(--slate); line-height: 1.4; }
+
+/* integration table */
+.integration-table {
+  width: 100%; border-collapse: separate; border-spacing: 0;
+  border: 1px solid var(--hairline); border-radius: var(--radius);
+  overflow: hidden; background: var(--white);
+}
+.integration-table th,
+.integration-table td {
+  padding: 16px 22px; text-align: left;
+  font-size: 14px; border-bottom: 1px solid var(--hairline);
+}
+.integration-table thead th {
+  background: var(--ghost);
+  font-weight: 600; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--slate);
+}
+.integration-table tbody tr:last-child td { border-bottom: 0; }
+.integration-table td:first-child { font-weight: 600; }
+
+.status-badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 3px 11px; border-radius: var(--radius-pill);
+  font-size: 11.5px; font-weight: 600; letter-spacing: 0.03em; white-space: nowrap;
+}
+.status-live    { background: #dcfce7; color: #15803d; }
+.status-sandbox { background: var(--violet-mist); color: var(--violet); }
+.status-dev     { background: #fef9c3; color: #a16207; }
+.status-planned { background: var(--ghost); color: var(--slate); border: 1px solid var(--hairline); }
+
+/* pilot offer card */
+.pilot-card {
+  background: var(--ink);
+  background-image: radial-gradient(rgba(91,71,224,0.12) 1px, transparent 1px);
+  background-size: 14px 14px;
+  border-radius: calc(var(--radius) + 6px);
+  padding: clamp(40px, 6vw, 72px) clamp(32px, 5vw, 64px);
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 5vw, 64px); align-items: center;
+}
+.pilot-perks    { display: flex; flex-direction: column; gap: 16px; margin-top: 28px; }
+.pilot-perk     { display: flex; gap: 14px; align-items: flex-start; }
+.perk-check {
+  width: 24px; height: 24px; flex: none; border-radius: 50%;
+  background: rgba(91,71,224,0.3);
+  display: flex; align-items: center; justify-content: center;
+  color: #b3a9f2; font-size: 11px; font-weight: 700; margin-top: 1px;
+}
+.perk-text       { font-size: 14px; line-height: 1.6; color: #c9c9d4; }
+.perk-text strong{ color: var(--white); font-weight: 600; }
+.pilot-cta-col   { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+.pilot-fine      { font-size: 12px; color: #6f6f80; line-height: 1.6; }
+
+/* deploy steps bar */
+.deploy-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--hairline); border-radius: var(--radius);
+  overflow: hidden; background: var(--white);
+}
+.deploy-step {
+  padding: 28px 22px 30px;
+  border-right: 1px solid var(--hairline);
+}
+.deploy-step:last-child { border-right: 0; }
+.deploy-phase {
+  font-weight: 600; font-size: 11px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--violet); margin-bottom: 12px;
+}
+.deploy-title { font-weight: 600; font-size: 16px; letter-spacing: -0.01em; margin-bottom: 8px; }
+.deploy-desc  { font-size: 13px; color: var(--slate); line-height: 1.5; }
+
+/* ============================================================
+   RESPONSIVE — new components
+   ============================================================ */
+@media (max-width: 1080px) {
+  .enroll-grid  { grid-template-columns: repeat(2, 1fr); }
+  .biz-grid     { grid-template-columns: repeat(2, 1fr); }
+  .market-grid  { grid-template-columns: repeat(2, 1fr); }
+  .deploy-grid  { grid-template-columns: repeat(2, 1fr); }
+  .deploy-step  { border-bottom: 1px solid var(--hairline); }
+  .deploy-step:nth-child(2) { border-right: 0; }
+  .deploy-step:nth-child(3) { border-bottom: 0; }
+  .deploy-step:last-child   { border-right: 0; border-bottom: 0; }
+  .pilot-card   { grid-template-columns: 1fr; }
+}
+@media (max-width: 900px) {
+  .privacy-split  { grid-template-columns: 1fr; }
+  .traction-grid  { grid-template-columns: 1fr; }
+  .value-bar      { grid-template-columns: 1fr; }
+  .value-bar-item { border-right: 0; border-bottom: 1px solid var(--hairline); }
+  .value-bar-item:last-child { border-bottom: 0; }
+}
+@media (max-width: 560px) {
+  .enroll-grid { grid-template-columns: 1fr; }
+  .biz-grid    { grid-template-columns: 1fr; }
+  .market-grid { grid-template-columns: 1fr; }
+  .deploy-grid { grid-template-columns: 1fr; }
+  .deploy-step { border-right: 0; border-bottom: 1px solid var(--hairline); }
+  .deploy-step:last-child { border-bottom: 0; }
+  .integration-table th:nth-child(2),
+  .integration-table td:nth-child(2) { display: none; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   * { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
   /* hero entrance */

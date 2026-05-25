@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import WaitlistForm from "@/components/WaitlistForm";
 
 /* ─── SEO ─── */
 export const metadata: Metadata = {
@@ -157,7 +158,7 @@ export default function ConsumersPage() {
               could authorise.
             </p>
             <div className="hero-cta reveal" style={{ "--rd": ".21s" } as React.CSSProperties}>
-              <Link className="btn btn-violet" href="/#signin">Join the waitlist</Link>
+              <Link className="btn btn-violet" href="#waitlist">Join the waitlist</Link>
               <Link className="btn btn-outline" href="#how">How it works</Link>
             </div>
           </div>
@@ -282,18 +283,83 @@ export default function ConsumersPage() {
         </div>
       </section>
 
+      {/* ─── Waitlist form ─── */}
+      <section className="section" id="waitlist">
+        <div className="container">
+          <header className="section-head" data-sr="">
+            <p className="eyebrow">— Join the waitlist</p>
+            <h2 className="display-2">Leave your card at home.</h2>
+            <p className="body-1 section-sub">
+              Fill in your details below. We&apos;ll follow up with the location
+              of your nearest Verix kiosk to complete face enrollment — takes
+              under two minutes in store.
+            </p>
+          </header>
+
+          <div className="waitlist-split">
+            {/* Form */}
+            <div className="waitlist-card" data-sr="left">
+              <WaitlistForm />
+            </div>
+
+            {/* What happens next */}
+            <div data-sr="right">
+              <p className="eyebrow" style={{ marginBottom: "28px" }}>— What happens next</p>
+              <div className="next-steps">
+                <div className="next-step">
+                  <div className="next-step-num">1</div>
+                  <div>
+                    <p className="next-step-title">We confirm your spot.</p>
+                    <p className="next-step-body">
+                      You&apos;ll receive an email within 24 hours confirming
+                      your place on the waitlist and the nearest active kiosk location.
+                    </p>
+                  </div>
+                </div>
+                <div className="next-step">
+                  <div className="next-step-num">2</div>
+                  <div>
+                    <p className="next-step-title">Visit a Verix kiosk.</p>
+                    <p className="next-step-body">
+                      At the kiosk, link your payment method and complete your
+                      one-time face scan. The whole process takes under two minutes.
+                    </p>
+                  </div>
+                </div>
+                <div className="next-step">
+                  <div className="next-step-num">3</div>
+                  <div>
+                    <p className="next-step-title">Pay with your face, everywhere.</p>
+                    <p className="next-step-body">
+                      Your credential is active. At any Verix-enabled checkout,
+                      just glance at the camera — no card, no phone, no PIN.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="badge-row" style={{ marginTop: "36px" }}>
+                {["BIPA Compliant", "GDPR Aligned", "AES-256 Encrypted", "Delete anytime"].map((b) => (
+                  <span key={b} className="compliance-badge light">{b}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ─── CTA ─── */}
-      <section className="section section-cta">
+      <section className="section section-cta" style={{ paddingTop: "0" }}>
         <div className="container cta-inner">
-          <p className="eyebrow">— Get started</p>
-          <h2 className="display-2">Leave your card at home.</h2>
+          <p className="eyebrow">— For operators</p>
+          <h2 className="display-2">Want Verix at your store?</h2>
           <p className="body-1 section-sub centered">
-            Join the waitlist and be first to pay with your face at a Verix-enabled
-            location near you.
+            Verix deploys as software-only on your existing terminals.
+            Zero implementation fees for the 90-day pilot.
           </p>
           <div className="hero-cta centered">
-            <Link className="btn btn-violet" href="/#signin">Join the waitlist</Link>
-            <Link className="btn btn-outline" href="/merchants">For merchants</Link>
+            <Link className="btn btn-violet" href="/merchants">For merchants</Link>
+            <Link className="btn btn-outline" href="/partners">For investors</Link>
           </div>
         </div>
       </section>

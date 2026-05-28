@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Reveal from "@/components/motion/Reveal";
+import { StaggerContainer, StaggerCard } from "@/components/motion/StaggerGrid";
 
 /* ─── Page-level SEO metadata ─── */
 export const metadata: Metadata = {
@@ -211,7 +213,7 @@ export default function TeamPage() {
       {/* ─── Team section ─── */}
       <section className="section" id="team">
         <div className="container">
-          <header className="section-head" data-sr="">
+          <Reveal tag="header" className="section-head">
             <p className="eyebrow">— The team</p>
             <h2 className="display-2">Who is behind Verix?</h2>
             <p className="body-1 section-sub">
@@ -219,15 +221,16 @@ export default function TeamPage() {
               different angles: the card is the attack surface. Remove the
               card, and both fraud vectors collapse.
             </p>
-          </header>
+          </Reveal>
 
-          <ul className="team-grid">
+          <StaggerContainer tag="ul" className="team-grid" stagger={0.07}>
             {team.map((member) => (
-              <li
+              <StaggerCard
                 key={member.initials}
+                tag="li"
                 className="team-card"
-                data-sr=""
-                style={{ "--rd": member.delay } as React.CSSProperties}
+                liftY={6}
+                liftShadow="0 16px 40px rgba(91,71,224,0.11)"
               >
                 <div className="team-avatar" aria-hidden="true">
                   {member.initials}
@@ -235,15 +238,15 @@ export default function TeamPage() {
                 <h3 className="team-name">{member.name}</h3>
                 <p className="team-role">{member.role}</p>
                 <p className="team-bio">{member.bio}</p>
-              </li>
+              </StaggerCard>
             ))}
-          </ul>
+          </StaggerContainer>
         </div>
       </section>
 
       {/* ─── CTA ─── */}
       <section className="section section-cta" id="contact">
-        <div className="container cta-inner">
+        <Reveal className="container cta-inner">
           <p className="eyebrow">— Talk to sales</p>
           <h2 className="display-2">Deploy Verix at your terminals.</h2>
           <p className="body-1 section-sub centered">
@@ -258,7 +261,7 @@ export default function TeamPage() {
               See how it works
             </Link>
           </div>
-        </div>
+        </Reveal>
       </section>
     </>
   );

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import InvestorForm from "@/components/InvestorForm";
+import Reveal from "@/components/motion/Reveal";
+import { StaggerContainer, StaggerCard, StaggerItem } from "@/components/motion/StaggerGrid";
 
 /* ─── SEO ─── */
 export const metadata: Metadata = {
@@ -111,7 +113,7 @@ export default function PartnersPage() {
       {/* ─── Market numbers ─── */}
       <section className="section">
         <div className="container">
-          <header className="section-head" data-sr="">
+          <Reveal tag="header" className="section-head">
             <p className="eyebrow">— Market opportunity</p>
             <h2 className="display-2">A $620B market built on broken infrastructure.</h2>
             <p className="body-1 section-sub">
@@ -119,49 +121,39 @@ export default function PartnersPage() {
               in the 1960s. The 16-digit card number is a shared secret — and shared
               secrets get stolen. Verix eliminates the credential, not just the fraud.
             </p>
-          </header>
+          </Reveal>
 
-          <div className="market-grid">
+          <StaggerContainer tag="div" className="market-grid">
             {marketNumbers.map((m) => (
-              <div
-                key={m.label}
-                className="market-card"
-                data-sr=""
-                style={{ "--rd": m.delay } as React.CSSProperties}
-              >
+              <StaggerCard key={m.label} tag="div" className="market-card">
                 <div className="market-num">
                   {m.num}<sup>{m.sup}</sup>
                 </div>
                 <p className="market-label">{m.label}</p>
-              </div>
+              </StaggerCard>
             ))}
-          </div>
+          </StaggerContainer>
 
           <p className="disclaimer-note">
             Market size estimates are based on third-party industry research and are provided for informational purposes only. Forward-looking statements involve risks and uncertainties — actual results may differ materially. Nothing on this page constitutes an offer of securities or investment advice.
           </p>
 
           {/* Investment thesis */}
-          <div className="feature-grid" style={{ marginTop: "0" }}>
+          <StaggerContainer tag="div" className="feature-grid" style={{ marginTop: "0" }}>
             {thesisPoints.map((point, i) => (
-              <div
-                key={i}
-                className="feature-card"
-                data-sr=""
-                style={{ "--rd": `${i * 0.07}s` } as React.CSSProperties}
-              >
+              <StaggerCard key={i} tag="div" className="feature-card">
                 <span className="feature-index mono">0{i + 1}</span>
                 <p className="body-1" style={{ lineHeight: "1.6" }}>{point}</p>
-              </div>
+              </StaggerCard>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
       {/* ─── Traction ─── */}
       <section className="section" style={{ background: "var(--ghost)" }}>
         <div className="container">
-          <header className="section-head" data-sr="">
+          <Reveal tag="header" className="section-head">
             <p className="eyebrow">— Active deployment</p>
             <h2 className="display-2">Early traction at scale.</h2>
             <p className="body-1 section-sub">
@@ -169,11 +161,11 @@ export default function PartnersPage() {
               load conditions and is entering structured deployment with enterprise partners
               across hospitality and retail.
             </p>
-          </header>
+          </Reveal>
 
           <div className="traction-grid">
             {/* Casino pilot */}
-            <div className="traction-card" data-sr="left">
+            <StaggerCard tag="div" className="traction-card" liftY={5} liftShadow="0 20px 56px rgba(91,71,224,0.1)">
               <div className="traction-tag">
                 <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor" aria-hidden="true">
                   <circle cx="4" cy="4" r="4" />
@@ -201,10 +193,10 @@ export default function PartnersPage() {
                   <p className="traction-stat-label">Processing fee</p>
                 </div>
               </div>
-            </div>
+            </StaggerCard>
 
             {/* SE Asia pipeline */}
-            <div className="traction-card" data-sr="right">
+            <StaggerCard tag="div" className="traction-card" liftY={5} liftShadow="0 20px 56px rgba(91,71,224,0.1)">
               <div className="traction-tag">
                 <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor" aria-hidden="true">
                   <circle cx="4" cy="4" r="4" />
@@ -232,7 +224,7 @@ export default function PartnersPage() {
                   <p className="traction-stat-label">Only deployment</p>
                 </div>
               </div>
-            </div>
+            </StaggerCard>
           </div>
         </div>
       </section>
@@ -240,7 +232,7 @@ export default function PartnersPage() {
       {/* ─── Business model ─── */}
       <section className="section section-dev">
         <div className="container">
-          <header className="section-head" data-sr="">
+          <Reveal tag="header" className="section-head">
             <p className="eyebrow eyebrow-on-dark">— Revenue model</p>
             <h2 className="display-2 on-dark" style={{ marginTop: "18px" }}>
               Transaction-level revenue. At every checkout.
@@ -250,31 +242,25 @@ export default function PartnersPage() {
               merchant volume and creates no adoption ceiling. The pilot commercial
               framework is designed to remove every barrier to a first deployment.
             </p>
-          </header>
+          </Reveal>
 
-          <div className="biz-grid">
+          <StaggerContainer tag="div" className="biz-grid">
             {bizModel.map((b) => (
-              <div
-                key={b.label}
-                className="biz-card"
-                data-sr=""
-                style={{ "--rd": b.delay } as React.CSSProperties}
-              >
+              <StaggerCard key={b.label} tag="div" className="biz-card" darkBg liftY={4}>
                 <div className="biz-num">
                   {b.num}<sup>{b.sup}</sup>
                 </div>
                 <p className="biz-label">{b.label}</p>
-              </div>
+              </StaggerCard>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
       {/* ─── Team callout ─── */}
       <section className="section">
         <div className="container">
-          <div
-            data-sr=""
+          <Reveal
             style={{
               background: "var(--white)",
               border: "1px solid var(--hairline)",
@@ -301,14 +287,14 @@ export default function PartnersPage() {
             <Link className="btn btn-ink" href="/team" style={{ whiteSpace: "nowrap" }}>
               Meet the team
             </Link>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       {/* ─── Investor contact form ─── */}
       <section className="section" id="contact">
         <div className="container">
-          <header className="section-head" data-sr="">
+          <Reveal tag="header" className="section-head">
             <p className="eyebrow">— Get in touch</p>
             <h2 className="display-2">Request a briefing.</h2>
             <p className="body-1 section-sub">
@@ -316,14 +302,14 @@ export default function PartnersPage() {
               Tell us about your interest and we&apos;ll prepare a relevant briefing —
               data room access available under NDA.
             </p>
-          </header>
+          </Reveal>
 
           <div className="waitlist-split">
-            <div className="waitlist-card" data-sr="left">
+            <Reveal direction="left" tag="div" className="waitlist-card">
               <InvestorForm />
-            </div>
+            </Reveal>
 
-            <div data-sr="right">
+            <Reveal direction="right">
               <p className="eyebrow" style={{ marginBottom: "28px" }}>— What to expect</p>
               <div className="next-steps">
                 <div className="next-step">
@@ -363,14 +349,14 @@ export default function PartnersPage() {
                   <span key={b} className="compliance-badge light">{b}</span>
                 ))}
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
 
       {/* ─── CTA ─── */}
       <section className="section section-cta">
-        <div className="container cta-inner">
+        <Reveal className="container cta-inner">
           <p className="eyebrow">— For operators</p>
           <h2 className="display-2">Want Verix at your store?</h2>
           <p className="body-1 section-sub centered">
@@ -380,7 +366,7 @@ export default function PartnersPage() {
             <Link className="btn btn-violet" href="/merchants">For merchants</Link>
             <Link className="btn btn-outline" href="/consumers">For consumers</Link>
           </div>
-        </div>
+        </Reveal>
       </section>
     </>
   );

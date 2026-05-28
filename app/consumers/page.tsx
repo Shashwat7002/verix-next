@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import WaitlistForm from "@/components/WaitlistForm";
+import Reveal from "@/components/motion/Reveal";
+import { StaggerContainer, StaggerCard, StaggerItem } from "@/components/motion/StaggerGrid";
+import AnimatedStat from "@/components/motion/AnimatedStat";
 
 /* ─── SEO ─── */
 export const metadata: Metadata = {
@@ -164,12 +167,11 @@ export default function ConsumersPage() {
           </div>
 
           {/* Trust stats */}
-          <div className="stats-card reveal" data-sr="scale" style={{ "--rd": ".28s" } as React.CSSProperties}>
+          <Reveal direction="scale" delay={0.28} tag="div" className="stats-card">
             <div className="stat">
               <span className="caps-label">Checkout time</span>
               <span className="mono-amount">
-                {"<"}<span data-count="2">2</span>
-                <span className="unit">sec</span>
+                {"<"}<AnimatedStat value={2} /><span className="unit">sec</span>
               </span>
             </div>
             <div className="stat">
@@ -184,7 +186,7 @@ export default function ConsumersPage() {
                 0<span className="unit">photos</span>
               </span>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -205,7 +207,7 @@ export default function ConsumersPage() {
       {/* ─── How it works ─── */}
       <section className="section" id="how">
         <div className="container">
-          <header className="section-head" data-sr="">
+          <Reveal tag="header" className="section-head">
             <p className="eyebrow">— How it works</p>
             <h2 className="display-2">Three steps. No card required.</h2>
             <p className="body-1 section-sub">
@@ -213,28 +215,23 @@ export default function ConsumersPage() {
               cryptographic credential tied to your payment method — nothing physical
               to carry, lose, or steal.
             </p>
-          </header>
-          <div className="enroll-grid">
+          </Reveal>
+          <StaggerContainer tag="div" className="enroll-grid">
             {enrollSteps.map((step) => (
-              <div
-                key={step.num}
-                className="enroll-card"
-                data-sr=""
-                style={{ "--rd": step.delay } as React.CSSProperties}
-              >
+              <StaggerCard key={step.num} tag="div" className="enroll-card">
                 <div className="enroll-num">{step.num}</div>
                 <h3 className="enroll-title">{step.title}</h3>
                 <p className="enroll-body">{step.body}</p>
-              </div>
+              </StaggerCard>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
       {/* ─── Privacy / dark section ─── */}
       <section className="section section-dark">
         <div className="container privacy-split">
-          <div data-sr="left">
+          <Reveal direction="left">
             <p className="eyebrow eyebrow-on-dark">— Privacy by design</p>
             <h2 className="display-2 on-dark" style={{ marginTop: "18px" }}>
               Your biometric is yours. Full stop.
@@ -249,44 +246,44 @@ export default function ConsumersPage() {
                 <span key={b} className="compliance-badge dark">{b}</span>
               ))}
             </div>
-          </div>
+          </Reveal>
 
-          <div className="trust-points" data-sr="right">
+          <StaggerContainer tag="div" className="trust-points" stagger={0.1}>
             {trustPoints.map((point) => (
-              <div key={point.title} className="trust-point">
+              <StaggerItem key={point.title} tag="div" className="trust-point">
                 <div className="trust-icon">{point.icon}</div>
                 <div>
                   <p className="trust-point-title">{point.title}</p>
                   <p className="trust-point-body">{point.body}</p>
                 </div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
       {/* ─── FAQ ─── */}
       <section className="section" id="faq">
         <div className="container">
-          <header className="section-head" data-sr="">
+          <Reveal tag="header" className="section-head">
             <p className="eyebrow">— Questions</p>
             <h2 className="display-2">What shoppers ask.</h2>
-          </header>
-          <div className="faq-list">
+          </Reveal>
+          <StaggerContainer tag="div" className="faq-list" stagger={0.06}>
             {faqItems.map((item) => (
-              <div key={item.name} className="faq-item" data-sr="fade">
+              <StaggerItem key={item.name} tag="div" className="faq-item">
                 <p className="faq-q">{item.name}</p>
                 <p className="faq-a">{item.acceptedAnswer.text}</p>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
       {/* ─── Waitlist form ─── */}
       <section className="section" id="waitlist">
         <div className="container">
-          <header className="section-head" data-sr="">
+          <Reveal tag="header" className="section-head">
             <p className="eyebrow">— Join the waitlist</p>
             <h2 className="display-2">Leave your card at home.</h2>
             <p className="body-1 section-sub">
@@ -294,16 +291,16 @@ export default function ConsumersPage() {
               of your nearest Verix kiosk to complete face enrollment — takes
               under two minutes in store.
             </p>
-          </header>
+          </Reveal>
 
           <div className="waitlist-split">
             {/* Form */}
-            <div className="waitlist-card" data-sr="left">
+            <Reveal direction="left" tag="div" className="waitlist-card">
               <WaitlistForm />
-            </div>
+            </Reveal>
 
             {/* What happens next */}
-            <div data-sr="right">
+            <Reveal direction="right">
               <p className="eyebrow" style={{ marginBottom: "28px" }}>— What happens next</p>
               <div className="next-steps">
                 <div className="next-step">
@@ -343,14 +340,14 @@ export default function ConsumersPage() {
                   <span key={b} className="compliance-badge light">{b}</span>
                 ))}
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
 
       {/* ─── CTA ─── */}
       <section className="section section-cta" style={{ paddingTop: "0" }}>
-        <div className="container cta-inner">
+        <Reveal className="container cta-inner">
           <p className="eyebrow">— For operators</p>
           <h2 className="display-2">Want Verix at your store?</h2>
           <p className="body-1 section-sub centered">
@@ -361,7 +358,7 @@ export default function ConsumersPage() {
             <Link className="btn btn-violet" href="/merchants">For merchants</Link>
             <Link className="btn btn-outline" href="/partners">For investors</Link>
           </div>
-        </div>
+        </Reveal>
       </section>
     </>
   );

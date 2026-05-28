@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import MerchantForm from "@/components/MerchantForm";
+import Reveal from "@/components/motion/Reveal";
+import { StaggerContainer, StaggerCard, StaggerItem } from "@/components/motion/StaggerGrid";
 
 /* ─── SEO ─── */
 export const metadata: Metadata = {
@@ -175,7 +177,7 @@ export default function MerchantsPage() {
       {/* ─── Why Verix ─── */}
       <section className="section">
         <div className="container">
-          <header className="section-head" data-sr="">
+          <Reveal tag="header" className="section-head">
             <p className="eyebrow">— The operator case</p>
             <h2 className="display-2">A better checkout — built into your existing stack.</h2>
             <p className="body-1 section-sub">
@@ -183,29 +185,29 @@ export default function MerchantsPage() {
               faster, your fees drop, and the fraud and chargeback liability that card
               infrastructure puts on merchants disappears with the card itself.
             </p>
-          </header>
+          </Reveal>
 
-          <div className="feature-grid">
+          <StaggerContainer tag="div" className="feature-grid">
             {[
               { n: "01", h: "Sub-2-second checkout.", b: "Biometric verification completes in under 400 ms. Shoppers look at the terminal and go — no card, no PIN, no phone. Lines move faster." },
               { n: "02", h: "No hardware replacement.", b: "Verix is a software-only injection into your existing Ingenico or Verifone terminals. Your acquiring relationships, your network. Nothing to rip out." },
               { n: "03", h: "Significantly lower processing cost.", b: "Verix processes at 0.6% per transaction versus standard card interchange rates — a material difference at any meaningful volume." },
               { n: "04", h: "Chargebacks eliminated at source.", b: "Every transaction carries biometric proof of presence and consent. Friendly fraud disputes arrive with evidence already attached." },
-            ].map((f, i) => (
-              <div key={f.n} className="feature-card" data-sr="" style={{ "--rd": `${i * 0.07}s` } as React.CSSProperties}>
+            ].map((f) => (
+              <StaggerCard key={f.n} tag="div" className="feature-card">
                 <span className="feature-index mono">{f.n}</span>
                 <h3 className="heading-1">{f.h}</h3>
                 <p className="body-2">{f.b}</p>
-              </div>
+              </StaggerCard>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
       {/* ─── Deployment timeline ─── */}
       <section className="section" style={{ background: "var(--ghost)" }}>
         <div className="container">
-          <header className="section-head" data-sr="">
+          <Reveal tag="header" className="section-head">
             <p className="eyebrow">— Deployment</p>
             <h2 className="display-2">Live in 90 days.</h2>
             <p className="body-1 section-sub">
@@ -213,31 +215,32 @@ export default function MerchantsPage() {
               fixed — assessment, integration, training, launch — with implementation
               fees entirely waived for the pilot cycle.
             </p>
-          </header>
-          <div className="deploy-grid" data-sr="">
+          </Reveal>
+          <StaggerContainer tag="div" className="deploy-grid">
             {deploySteps.map((step) => (
-              <div key={step.phase} className="deploy-step">
+              <StaggerItem key={step.phase} tag="div" className="deploy-step">
                 <p className="deploy-phase">{step.phase}</p>
                 <p className="deploy-title">{step.title}</p>
                 <p className="deploy-desc">{step.desc}</p>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
       {/* ─── Integration table ─── */}
       <section className="section" id="integrations">
         <div className="container">
-          <header className="section-head" data-sr="">
+          <Reveal tag="header" className="section-head">
             <p className="eyebrow">— Integrations</p>
             <h2 className="display-2">Works with your stack.</h2>
             <p className="body-1 section-sub">
               Verix deploys as a software-only layer on top of the terminal hardware and
               POS platforms already in your estate.
             </p>
-          </header>
-          <table className="integration-table" data-sr="">
+          </Reveal>
+          <Reveal tag="div" delay={0.1}>
+          <table className="integration-table">
             <thead>
               <tr>
                 <th>Platform</th>
@@ -260,8 +263,9 @@ export default function MerchantsPage() {
             </tbody>
           </table>
 
+          </Reveal>
           {/* Compliance badges */}
-          <div style={{ marginTop: "40px" }} data-sr="">
+          <Reveal style={{ marginTop: "40px" }} delay={0.15}>
             <p className="eyebrow" style={{ marginBottom: "20px" }}>— Compliance</p>
             <div className="badge-row">
               {[
@@ -277,7 +281,7 @@ export default function MerchantsPage() {
                 <span key={b} className="compliance-badge light">{b}</span>
               ))}
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -325,39 +329,39 @@ export default function MerchantsPage() {
       {/* ─── FAQ ─── */}
       <section className="section" style={{ background: "var(--ghost)" }}>
         <div className="container">
-          <header className="section-head" data-sr="">
+          <Reveal tag="header" className="section-head">
             <p className="eyebrow">— Questions</p>
             <h2 className="display-2">What operators ask.</h2>
-          </header>
-          <div className="faq-list">
+          </Reveal>
+          <StaggerContainer tag="div" className="faq-list" stagger={0.06}>
             {faqItems.map((item) => (
-              <div key={item.name} className="faq-item" data-sr="fade">
+              <StaggerItem key={item.name} tag="div" className="faq-item">
                 <p className="faq-q">{item.name}</p>
                 <p className="faq-a">{item.acceptedAnswer.text}</p>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
       {/* ─── Contact / Sales form ─── */}
       <section className="section" id="contact">
         <div className="container">
-          <header className="section-head" data-sr="">
+          <Reveal tag="header" className="section-head">
             <p className="eyebrow">— Start a pilot</p>
             <h2 className="display-2">Let&apos;s talk about your estate.</h2>
             <p className="body-1 section-sub">
               Tell us about your setup and we&apos;ll come back with a tailored
               pilot proposal — zero implementation fees, no long-term commitment required.
             </p>
-          </header>
+          </Reveal>
 
           <div className="waitlist-split">
-            <div className="waitlist-card" data-sr="left">
+            <Reveal direction="left" tag="div" className="waitlist-card">
               <MerchantForm />
-            </div>
+            </Reveal>
 
-            <div data-sr="right">
+            <Reveal direction="right">
               <p className="eyebrow" style={{ marginBottom: "28px" }}>— What to expect</p>
               <div className="next-steps">
                 <div className="next-step">
@@ -397,7 +401,7 @@ export default function MerchantsPage() {
                   <span key={b} className="compliance-badge light">{b}</span>
                 ))}
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>

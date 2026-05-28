@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollAnimations from "@/components/ScrollAnimations";
+import ScrollProgressBar from "@/components/motion/ScrollProgressBar";
 
 /* ─── Fonts (next/font eliminates render-blocking Google Fonts request) ─── */
 const jakarta = Plus_Jakarta_Sans({
@@ -106,6 +107,7 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <ScrollProgressBar />
         <a className="skip-link" href="#main">
           Skip to content
         </a>

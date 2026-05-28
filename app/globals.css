@@ -162,6 +162,14 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
   position: sticky; top: 0; z-index: 100;
   background: var(--ghost);
   border-bottom: 1px solid var(--hairline);
+  transition: background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.site-header.scrolled {
+  background: rgba(247,247,250,0.85);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  backdrop-filter: saturate(180%) blur(12px);
+  box-shadow: 0 2px 24px rgba(15,14,23,0.07);
+  border-bottom-color: transparent;
 }
 .header-inner {
   display: flex; align-items: center; gap: 32px;
@@ -289,7 +297,7 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
   padding: 30px 28px 34px;
   transition: border-color .18s ease, transform .18s ease;
 }
-.feature-card:hover { border-color: rgba(91,71,224,0.35); transform: translateY(-3px); }
+.feature-card:hover { border-color: rgba(91,71,224,0.35); }
 .feature-index { display: block; font-size: 13px; color: var(--violet); margin-bottom: 40px; }
 .feature-card .heading-1 { font-size: 22px; }
 .feature-card .body-2 { margin-top: 14px; }
@@ -303,7 +311,7 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
   padding: 28px 28px 30px;
   transition: border-color .18s ease, transform .18s ease;
 }
-.industry-card:hover { border-color: rgba(91,71,224,0.35); transform: translateY(-3px); }
+.industry-card:hover { border-color: rgba(91,71,224,0.35); }
 .industry-code { display: block; font-size: 12.5px; color: var(--violet); }
 .industry-name { font-weight: 600; font-size: 20px; letter-spacing: -0.015em; margin: 16px 0 10px; }
 
@@ -534,7 +542,7 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
   padding: 36px 28px 32px;
   transition: border-color .18s ease, transform .18s ease;
 }
-.team-card:hover { border-color: rgba(91,71,224,0.35); transform: translateY(-3px); }
+.team-card:hover { border-color: rgba(91,71,224,0.35); }
 /* reverse-triangle: 3 → 2 → 1 centered */
 .team-card:nth-child(4) { grid-column: 2 / span 2; }
 .team-card:nth-child(5) { grid-column: 4 / span 2; }
@@ -655,13 +663,21 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
   .endpoint-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr 1fr; }
 
+  /* Mobile nav — motion.nav handles open/close; this styles the open state */
   .mobile-nav.open {
+    display: block;
+    border-top: 1px solid var(--hairline);
+    background: var(--ghost);
+  }
+  .mobile-nav-inner {
     display: flex; flex-direction: column; gap: 4px;
     padding: 12px var(--gutter) 24px;
-    border-top: 1px solid var(--hairline);
   }
-  .mobile-nav a { padding: 12px 0; font-weight: 500; font-size: 16px; border-bottom: 1px solid var(--hairline); }
+  .mobile-nav a { padding: 12px 0; display: block; font-weight: 500; font-size: 16px; border-bottom: 1px solid var(--hairline); }
   .mobile-nav .btn { margin-top: 16px; }
+  .nav-toggle.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .nav-toggle.open span:nth-child(2) { opacity: 0; }
+  .nav-toggle.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
   .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
   .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
   .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
@@ -802,7 +818,7 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
   border-radius: var(--radius); padding: 36px 28px 32px;
   transition: border-color .18s ease, transform .18s ease;
 }
-.enroll-card:hover { border-color: rgba(91,71,224,0.35); transform: translateY(-3px); }
+.enroll-card:hover { border-color: rgba(91,71,224,0.35); }
 .enroll-num {
   display: flex; align-items: center; justify-content: center;
   width: 44px; height: 44px; border-radius: 50%;
@@ -858,7 +874,7 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
   border-radius: var(--radius); padding: 36px 28px;
   transition: border-color .18s ease, transform .18s ease;
 }
-.market-card:hover { border-color: rgba(91,71,224,0.35); transform: translateY(-3px); }
+.market-card:hover { border-color: rgba(91,71,224,0.35); }
 .market-num {
   font-family: var(--mono); font-weight: 500;
   font-size: clamp(40px, 5vw, 62px);
@@ -874,7 +890,7 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
   border-radius: var(--radius); padding: 32px 28px;
   transition: border-color .18s ease, transform .18s ease;
 }
-.traction-card:hover { border-color: rgba(91,71,224,0.35); transform: translateY(-3px); }
+.traction-card:hover { border-color: rgba(91,71,224,0.35); }
 .traction-tag {
   display: inline-flex; align-items: center; gap: 6px;
   padding: 4px 12px; background: var(--violet-mist);
@@ -897,7 +913,7 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
   background: var(--ink); border-radius: var(--radius); padding: 34px 28px;
   transition: transform .18s ease;
 }
-.biz-card:hover { transform: translateY(-3px); }
+.biz-card:hover { opacity: 0.9; }
 .biz-num {
   font-family: var(--mono); font-weight: 500;
   font-size: clamp(38px, 4.5vw, 54px);
@@ -1198,6 +1214,41 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
   padding-left: 14px;
   margin-top: -8px;
   margin-bottom: 32px;
+}
+
+/* ============================================================
+   MOTION.DEV — Scroll Progress Bar + polish
+   ============================================================ */
+
+/* Scroll progress bar — fixed at very top, transforms via motion scaleX */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--violet);
+  transform-origin: left;
+  z-index: 200;
+  pointer-events: none;
+  border-radius: 0 2px 2px 0;
+}
+
+/* Give motion-wrapped elements will-change hint for GPU compositing */
+[data-motion-translate],
+.feature-card,
+.industry-card,
+.team-card,
+.enroll-card,
+.market-card,
+.traction-card,
+.biz-card,
+.proof-card {
+  will-change: transform;
+}
+
+/* Ensure motion wrappers that carry layout classes (grid containers) display correctly */
+.feature-grid[data-framer-appear-id],
+.industry-grid[data-framer-appear-id] {
+  display: grid;
 }
 
 /* ─── Legal page responsive ─── */

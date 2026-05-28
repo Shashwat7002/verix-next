@@ -130,8 +130,8 @@ export default function MerchantForm() {
       </button>
 
       <p className="form-fine">
-        No commitment required. A member of the Verix team will be in touch
-        to discuss your estate.
+        No commitment required. Your details are handled in accordance with our{" "}
+        <a href="/privacy" className="form-fine-link">Privacy Policy</a>.
       </p>
     </form>
   );

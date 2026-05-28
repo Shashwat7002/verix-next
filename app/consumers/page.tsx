@@ -102,7 +102,7 @@ const trustPoints = [
   },
   {
     title: "Compliance baked in.",
-    body: "Verix enrollment flows are designed to satisfy BIPA consent requirements, GDPR data minimisation rules, and PCI DSS tokenisation standards.",
+    body: "Verix enrollment flows are designed with BIPA consent requirements, GDPR data minimisation rules, and PCI DSS tokenisation standards in mind.",
     icon: (
       <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
         <path d="M4 4 H14 V11 C14 14 9 16 9 16 C9 16 4 14 4 11 Z" />
@@ -245,7 +245,7 @@ export default function ConsumersPage() {
               and that token contains zero personally identifiable information.
             </p>
             <div className="badge-row">
-              {["BIPA Compliant", "GDPR Aligned", "PCI DSS", "AES-256 Encryption", "TLS 1.3"].map((b) => (
+              {["BIPA Aligned", "GDPR Aligned", "PCI DSS", "AES-256 Encryption", "TLS 1.3"].map((b) => (
                 <span key={b} className="compliance-badge dark">{b}</span>
               ))}
             </div>
@@ -311,8 +311,8 @@ export default function ConsumersPage() {
                   <div>
                     <p className="next-step-title">We confirm your spot.</p>
                     <p className="next-step-body">
-                      You&apos;ll receive an email within 24 hours confirming
-                      your place on the waitlist and the nearest active kiosk location.
+                      You&apos;ll receive an email confirming your place on the
+                      waitlist and the nearest active kiosk location.
                     </p>
                   </div>
                 </div>
@@ -339,7 +339,7 @@ export default function ConsumersPage() {
               </div>
 
               <div className="badge-row" style={{ marginTop: "36px" }}>
-                {["BIPA Compliant", "GDPR Aligned", "AES-256 Encrypted", "Delete anytime"].map((b) => (
+                {["BIPA Aligned", "GDPR Aligned", "AES-256 Encrypted", "Delete anytime"].map((b) => (
                   <span key={b} className="compliance-badge light">{b}</span>
                 ))}
               </div>

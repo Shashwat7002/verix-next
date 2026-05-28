@@ -266,7 +266,7 @@ export default function MerchantsPage() {
             <div className="badge-row">
               {[
                 "PCI DSS Scope Reduction",
-                "BIPA Compliant",
+                "BIPA Aligned",
                 "GDPR Aligned",
                 "UK GDPR",
                 "Indonesia UU PDP",
@@ -347,9 +347,8 @@ export default function MerchantsPage() {
             <p className="eyebrow">— Start a pilot</p>
             <h2 className="display-2">Let&apos;s talk about your estate.</h2>
             <p className="body-1 section-sub">
-              Tell us about your setup and we&apos;ll come back within one business
-              day with a tailored 90-day pilot proposal — zero implementation fees,
-              no long-term commitment required.
+              Tell us about your setup and we&apos;ll come back with a tailored
+              pilot proposal — zero implementation fees, no long-term commitment required.
             </p>
           </header>
 
@@ -394,7 +393,7 @@ export default function MerchantsPage() {
               </div>
 
               <div className="badge-row" style={{ marginTop: "36px" }}>
-                {["Software-Only Deployment", "No Hardware Swap", "BIPA Compliant", "PCI DSS"].map((b) => (
+                {["Software-Only Deployment", "No Hardware Swap", "BIPA Aligned", "PCI DSS"].map((b) => (
                   <span key={b} className="compliance-badge light">{b}</span>
                 ))}
               </div>

@@ -101,8 +101,10 @@ export default function WaitlistForm() {
       </button>
 
       <p className="form-fine">
-        By submitting you agree to be contacted about your Verix enrollment.
-        We&apos;ll never share your details with third parties.
+        By submitting you agree to our{" "}
+        <a href="/terms" className="form-fine-link">Terms of Service</a>.
+        Your information is handled in accordance with our{" "}
+        <a href="/privacy" className="form-fine-link">Privacy Policy</a>.
       </p>
     </form>
   );

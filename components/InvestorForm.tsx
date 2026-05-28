@@ -147,7 +147,9 @@ export default function InvestorForm() {
       </button>
 
       <p className="form-fine">
-        All inquiries are treated in strict confidence.
+        All inquiries are treated in strict confidence. Your details are handled
+        in accordance with our{" "}
+        <a href="/privacy" className="form-fine-link">Privacy Policy</a>.
       </p>
     </form>
   );

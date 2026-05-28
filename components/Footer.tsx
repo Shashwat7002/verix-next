@@ -30,32 +30,33 @@ export default function Footer() {
         <nav className="footer-col" aria-label="Product">
           <p className="caps-label">Product</p>
           <Link href="/#how">How it works</Link>
-          <Link href="/#developers">Developers</Link>
-          <Link href="/#pricing">Pricing</Link>
+          <Link href="/#industries">Industries</Link>
           <Link href="/#faq">FAQ</Link>
+          <Link href="/merchants#contact">Pricing</Link>
         </nav>
 
         <nav className="footer-col" aria-label="Use Cases">
           <p className="caps-label">Use Cases</p>
           <Link href="/consumers">For Consumers</Link>
           <Link href="/merchants">For Merchants</Link>
-          <Link href="/partners">For Partners</Link>
-          <Link href="/#industries">Industries</Link>
+          <Link href="/partners">For Investors</Link>
+          <Link href="/team">Team</Link>
         </nav>
 
         <nav className="footer-col" aria-label="Company">
           <p className="caps-label">Company</p>
-          <Link href="/team">Team</Link>
-          <Link href="/partners">Investors</Link>
-          <Link href="/#pricing">Talk to sales</Link>
-          <Link href="/#signin">Sign in</Link>
+          <Link href="/merchants#contact">Talk to sales</Link>
+          <Link href="/privacy">Privacy Policy</Link>
+          <Link href="/terms">Terms of Service</Link>
         </nav>
       </div>
 
       <div className="container footer-meta mono">
         <span>VERIX · BIOMETRIC PAYMENTS · © {new Date().getFullYear()}</span>
-        <span className="muted">
-          PLUS JAKARTA SANS · JETBRAINS MONO · DEEP VIOLET #5B47E0
+        <span className="footer-legal-links">
+          <Link href="/privacy" className="footer-legal-link">Privacy Policy</Link>
+          <span className="muted" aria-hidden="true">·</span>
+          <Link href="/terms" className="footer-legal-link">Terms of Service</Link>
         </span>
       </div>
     </footer>

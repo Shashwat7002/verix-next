@@ -137,6 +137,10 @@ export default function PartnersPage() {
             ))}
           </div>
 
+          <p className="disclaimer-note">
+            Market size estimates are based on third-party industry research and are provided for informational purposes only. Forward-looking statements involve risks and uncertainties — actual results may differ materially. Nothing on this page constitutes an offer of securities or investment advice.
+          </p>
+
           {/* Investment thesis */}
           <div className="feature-grid" style={{ marginTop: "0" }}>
             {thesisPoints.map((point, i) => (

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import MerchantForm from "@/components/MerchantForm";
 
 /* ─── SEO ─── */
 export const metadata: Metadata = {
@@ -124,16 +125,17 @@ export default function MerchantsPage() {
               — For Operators
             </p>
             <h1 className="display-1 reveal merchants-hero" style={{ "--rd": ".07s" } as React.CSSProperties}>
-              Cut card fees by 80%.<br />
-              <span className="accent">Zero chargebacks.</span>
+              Checkout in under<br />
+              <span className="accent">two seconds.</span>
             </h1>
             <p className="body-1 hero-lede reveal merchants-lede" style={{ "--rd": ".14s" } as React.CSSProperties}>
-              Verix processes at 0.6% — software-only, on your existing Ingenico and
-              Verifone terminals. Every transaction carries biometric proof of consent.
-              Chargebacks stop at the source.
+              Verix is a software-only biometric payment layer for your existing
+              Ingenico and Verifone terminals. Shoppers pay with a glance — verified
+              in under 400&nbsp;ms, no card required. Lower processing fees and
+              eliminated chargebacks come with it.
             </p>
             <div className="hero-cta reveal" style={{ "--rd": ".21s" } as React.CSSProperties}>
-              <Link className="btn btn-violet" href="/#pricing">Start a pilot</Link>
+              <Link className="btn btn-violet" href="#contact">Start a pilot</Link>
               <Link className="btn btn-outline" href="#integrations">See integrations</Link>
             </div>
           </div>
@@ -175,20 +177,20 @@ export default function MerchantsPage() {
         <div className="container">
           <header className="section-head" data-sr="">
             <p className="eyebrow">— The operator case</p>
-            <h2 className="display-2">Card infrastructure was never built for you.</h2>
+            <h2 className="display-2">A better checkout — built into your existing stack.</h2>
             <p className="body-1 section-sub">
-              Merchants absorb 3–5% interchange on every transaction, bear the liability
-              for card-not-present fraud, and spend thousands disputing chargebacks that
-              the card networks systematically side against them. Verix flips all three.
+              Verix replaces the card with a face at the point of sale. Shoppers move
+              faster, your fees drop, and the fraud and chargeback liability that card
+              infrastructure puts on merchants disappears with the card itself.
             </p>
           </header>
 
           <div className="feature-grid">
             {[
-              { n: "01", h: "80% lower processing cost", b: "At 0.6% per transaction, a merchant processing $1M monthly saves roughly $24,000 against a standard 3% interchange rate." },
-              { n: "02", h: "Chargebacks eliminated, not disputed.", b: "Every Verix transaction is tied to a biometric match. Friendly fraud — 'I didn't make this charge' — becomes legally unwinnable when you have biometric proof of presence." },
-              { n: "03", h: "No hardware replacement.", b: "Verix is a software-only injection into your existing Ingenico or Verifone terminals. Your acquiring relationships, your network. Just lower fees and better proof." },
-              { n: "04", h: "Compliance overhead reduced.", b: "Verix tokenisation keeps your core infrastructure out of PCI cardholder data scope. BIPA, GDPR, and PCI DSS requirements are satisfied at the architecture level." },
+              { n: "01", h: "Sub-2-second checkout.", b: "Biometric verification completes in under 400 ms. Shoppers look at the terminal and go — no card, no PIN, no phone. Lines move faster." },
+              { n: "02", h: "No hardware replacement.", b: "Verix is a software-only injection into your existing Ingenico or Verifone terminals. Your acquiring relationships, your network. Nothing to rip out." },
+              { n: "03", h: "Significantly lower processing cost.", b: "Verix processes at 0.6% per transaction versus standard card interchange rates — a material difference at any meaningful volume." },
+              { n: "04", h: "Chargebacks eliminated at source.", b: "Every transaction carries biometric proof of presence and consent. Friendly fraud disputes arrive with evidence already attached." },
             ].map((f, i) => (
               <div key={f.n} className="feature-card" data-sr="" style={{ "--rd": `${i * 0.07}s` } as React.CSSProperties}>
                 <span className="feature-index mono">{f.n}</span>
@@ -308,7 +310,7 @@ export default function MerchantsPage() {
                 only variable is transaction volume — and you keep 40% of every fraud
                 saving we prove against your baseline.
               </p>
-              <Link className="btn btn-violet" href="/#pricing">
+              <Link className="btn btn-violet" href="#contact">
                 Talk to the team
               </Link>
               <p className="pilot-fine">
@@ -338,18 +340,80 @@ export default function MerchantsPage() {
         </div>
       </section>
 
+      {/* ─── Contact / Sales form ─── */}
+      <section className="section" id="contact">
+        <div className="container">
+          <header className="section-head" data-sr="">
+            <p className="eyebrow">— Start a pilot</p>
+            <h2 className="display-2">Let&apos;s talk about your estate.</h2>
+            <p className="body-1 section-sub">
+              Tell us about your setup and we&apos;ll come back within one business
+              day with a tailored 90-day pilot proposal — zero implementation fees,
+              no long-term commitment required.
+            </p>
+          </header>
+
+          <div className="waitlist-split">
+            <div className="waitlist-card" data-sr="left">
+              <MerchantForm />
+            </div>
+
+            <div data-sr="right">
+              <p className="eyebrow" style={{ marginBottom: "28px" }}>— What to expect</p>
+              <div className="next-steps">
+                <div className="next-step">
+                  <div className="next-step-num">1</div>
+                  <div>
+                    <p className="next-step-title">We review your submission.</p>
+                    <p className="next-step-body">
+                      A member of the Verix team reviews your estate details
+                      and follows up to discuss fit.
+                    </p>
+                  </div>
+                </div>
+                <div className="next-step">
+                  <div className="next-step-num">2</div>
+                  <div>
+                    <p className="next-step-title">Intro call.</p>
+                    <p className="next-step-body">
+                      We walk through your terminal estate, transaction volume, and
+                      fraud baseline to scope the engagement accurately.
+                    </p>
+                  </div>
+                </div>
+                <div className="next-step">
+                  <div className="next-step-num">3</div>
+                  <div>
+                    <p className="next-step-title">Structured deployment.</p>
+                    <p className="next-step-body">
+                      From signed agreement to guest-facing deployment —
+                      scoped and structured to your estate.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="badge-row" style={{ marginTop: "36px" }}>
+                {["Software-Only Deployment", "No Hardware Swap", "BIPA Compliant", "PCI DSS"].map((b) => (
+                  <span key={b} className="compliance-badge light">{b}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ─── CTA ─── */}
       <section className="section section-cta">
         <div className="container cta-inner">
-          <p className="eyebrow">— Talk to sales</p>
-          <h2 className="display-2">Ready to cut your card costs?</h2>
+          <p className="eyebrow">— For investors</p>
+          <h2 className="display-2">Interested in the opportunity?</h2>
           <p className="body-1 section-sub centered">
-            Volume-based pricing, billed by settlement. Implementation fees waived for
-            the 90-day pilot. Talk to the team about your estate.
+            Learn about the market, the traction, and the investment thesis behind Verix.
           </p>
           <div className="hero-cta centered">
-            <Link className="btn btn-violet" href="/#pricing">Start a pilot</Link>
-            <Link className="btn btn-outline" href="/partners">For investors</Link>
+            <Link className="btn btn-violet" href="/partners">For investors</Link>
+            <Link className="btn btn-outline" href="/consumers">For consumers</Link>
           </div>
         </div>
       </section>

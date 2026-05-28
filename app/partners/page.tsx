@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import InvestorForm from "@/components/InvestorForm";
 
 /* ─── SEO ─── */
 export const metadata: Metadata = {
@@ -100,7 +101,7 @@ export default function PartnersPage() {
               card data on the merchant side.
             </p>
             <div className="hero-cta reveal" style={{ "--rd": ".21s" } as React.CSSProperties}>
-              <Link className="btn btn-violet" href="/#pricing">Request a briefing</Link>
+              <Link className="btn btn-violet" href="#contact">Request a briefing</Link>
               <Link className="btn btn-outline" href="/team">Meet the team</Link>
             </div>
           </div>
@@ -300,19 +301,80 @@ export default function PartnersPage() {
         </div>
       </section>
 
+      {/* ─── Investor contact form ─── */}
+      <section className="section" id="contact">
+        <div className="container">
+          <header className="section-head" data-sr="">
+            <p className="eyebrow">— Get in touch</p>
+            <h2 className="display-2">Request a briefing.</h2>
+            <p className="body-1 section-sub">
+              We respond to every serious inquiry within two business days.
+              Tell us about your interest and we&apos;ll prepare a relevant briefing —
+              data room access available under NDA.
+            </p>
+          </header>
+
+          <div className="waitlist-split">
+            <div className="waitlist-card" data-sr="left">
+              <InvestorForm />
+            </div>
+
+            <div data-sr="right">
+              <p className="eyebrow" style={{ marginBottom: "28px" }}>— What to expect</p>
+              <div className="next-steps">
+                <div className="next-step">
+                  <div className="next-step-num">1</div>
+                  <div>
+                    <p className="next-step-title">We review your inquiry.</p>
+                    <p className="next-step-body">
+                      Every submission is read by the founding team. We follow
+                      up with a relevant briefing pack.
+                    </p>
+                  </div>
+                </div>
+                <div className="next-step">
+                  <div className="next-step-num">2</div>
+                  <div>
+                    <p className="next-step-title">Intro call.</p>
+                    <p className="next-step-body">
+                      A direct conversation with the founding team covering the
+                      thesis, traction, technology, and go-to-market plan.
+                    </p>
+                  </div>
+                </div>
+                <div className="next-step">
+                  <div className="next-step-num">3</div>
+                  <div>
+                    <p className="next-step-title">Data room access under NDA.</p>
+                    <p className="next-step-body">
+                      Full financials, technical architecture, and pilot performance
+                      data available to qualified investors and strategic partners.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="badge-row" style={{ marginTop: "36px" }}>
+                {["$620B Market", "$35B Problem", "Active Pilots", "NDA Available"].map((b) => (
+                  <span key={b} className="compliance-badge light">{b}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ─── CTA ─── */}
       <section className="section section-cta">
         <div className="container cta-inner">
-          <p className="eyebrow">— Get in touch</p>
-          <h2 className="display-2">Interested in partnering?</h2>
+          <p className="eyebrow">— For operators</p>
+          <h2 className="display-2">Want Verix at your store?</h2>
           <p className="body-1 section-sub centered">
-            We are building strategic relationships with fintech investors, payment
-            network partners, and enterprise distribution channels. If the thesis resonates,
-            let&apos;s talk.
+            See how Verix deploys on your existing terminals and what the 90-day pilot looks like.
           </p>
           <div className="hero-cta centered">
-            <Link className="btn btn-violet" href="/#pricing">Request a briefing</Link>
-            <Link className="btn btn-outline" href="/merchants">For operators</Link>
+            <Link className="btn btn-violet" href="/merchants">For merchants</Link>
+            <Link className="btn btn-outline" href="/consumers">For consumers</Link>
           </div>
         </div>
       </section>

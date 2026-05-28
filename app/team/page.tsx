@@ -64,6 +64,12 @@ const orgSchema = {
       roleName: "CSO",
       startDate: "2024",
     },
+    {
+      "@type": "OrganizationRole",
+      member: { "@type": "Person", name: "Giovanni Samayoa", jobTitle: "VP, Partner Relations" },
+      roleName: "VP, Partner Relations",
+      startDate: "2024",
+    },
   ],
 };
 
@@ -131,6 +137,13 @@ const team = [
     bio: "Joshua leads Verix's security posture — from liveness detection and anti-spoofing protocols to PCI DSS and GDPR+BIPA compliance frameworks. He ensures every credential Verix issues and every transaction it authorizes meets the highest global security standards.",
     delay: ".24s",
   },
+  {
+    initials: "GS",
+    name: "Giovanni Samayoa",
+    role: "VP, Partner Relations",
+    bio: "Giovanni manages Verix's partner relationships, working with operators and strategic partners to support deployment and growth.",
+    delay: ".30s",
+  },
 ];
 
 export default function TeamPage() {
@@ -190,6 +203,7 @@ export default function TeamPage() {
             <li>Chief Operating Officer</li>
             <li>Chief Technology Officer</li>
             <li>Chief Security Officer</li>
+            <li>VP, Partner Relations</li>
           </ul>
         </div>
       </section>
@@ -237,7 +251,7 @@ export default function TeamPage() {
             retail, gaming, restaurants, and beyond.
           </p>
           <div className="hero-cta centered">
-            <Link className="btn btn-violet" href="/#pricing">
+            <Link className="btn btn-violet" href="/merchants#contact">
               Talk to sales
             </Link>
             <Link className="btn btn-outline" href="/#how">

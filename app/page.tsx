@@ -115,30 +115,6 @@ const webPageSchema = {
   },
 };
 
-/* ─── Inline SVG sub-components ─── */
-const ScanIcon = () => (
-  <svg
-    className="scan-icon"
-    viewBox="0 0 24 24"
-    fill="none"
-    aria-hidden="true"
-  >
-    <path
-      d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <circle cx="12" cy="11" r="2.1" stroke="currentColor" strokeWidth="1.8" />
-    <path
-      d="M8.4 16c.7-1.3 2-2.1 3.6-2.1s2.9.8 3.6 2.1"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-    />
-  </svg>
-);
 
 /* ─── Page ─── */
 export default function HomePage() {
@@ -171,16 +147,16 @@ export default function HomePage() {
               — Biometric payments for physical commerce
             </p>
             <h1 className="display-1 reveal" style={{ "--rd": ".07s" } as React.CSSProperties}>
-              Pay by <span className="accent">face</span>. End card fraud and chargebacks.
+              Pay by <span className="accent">face</span>. Checkout in seconds.
             </h1>
             <p className="body-1 hero-lede reveal" style={{ "--rd": ".14s" } as React.CSSProperties}>
-              Verix is a biometric payment credential — the cardholder&apos;s face replaces
-              the card at the point of sale. There&apos;s nothing to steal or clone, and
-              every charge carries proof the real account holder approved it. Card
-              fraud and chargeback fraud both stop.
+              Verix replaces the card at the point of sale with a face. Shoppers
+              enroll once, then pay anywhere with a glance — verified in under
+              400&nbsp;ms, no card, no phone, no friction. Fraud protection is
+              built in at the architecture level.
             </p>
             <div className="hero-cta reveal" style={{ "--rd": ".21s" } as React.CSSProperties}>
-              <Link className="btn btn-violet" href="#pricing">Talk to sales</Link>
+              <Link className="btn btn-violet" href="/merchants#contact">Talk to sales</Link>
               <Link className="btn btn-outline" href="#how">See how it works</Link>
             </div>
           </div>
@@ -245,10 +221,10 @@ export default function HomePage() {
 
           <ol className="step-grid">
             {[
-              { n: "01", title: "Enroll once", rd: "0s", body: "The shopper links a card or bank account to their face in the app or at a kiosk. Verix keeps a one-way face template — never a photo or card number." },
-              { n: "02", title: "Verify at checkout", rd: ".1s", body: "The terminal scans the shopper's face, checks liveness to block photos and masks, and matches the template in under 400 ms." },
-              { n: "03", title: "Authorize with proof", rd: ".2s", body: "Verix authorizes the charge and attaches signed biometric proof of consent — the record that defeats chargeback fraud." },
-              { n: "04", title: "Settle and reconcile", rd: ".3s", body: "Funds settle through your existing processor. Any dispute arrives with the proof already attached." },
+              { n: "01", title: "Under 400 ms, every time.", rd: "0s", body: "A face scan clears in under 400 ms. No card tap, no PIN, no phone — the shopper looks at the terminal and walks away." },
+              { n: "02", title: "Enroll once. Pay everywhere.", rd: ".08s", body: "One enrollment links a shopper's face to their payment method. Every Verix-enabled checkout after that requires nothing from them." },
+              { n: "03", title: "No card to steal.", rd: ".16s", body: "No card number, magstripe, or token sits at the counter. Skimming, cloning, and fraud have nothing to work with." },
+              { n: "04", title: "Every charge carries proof.", rd: ".24s", body: "Biometric consent is attached to every transaction. Friendly fraud disputes arrive with evidence already on file." },
             ].map(({ n, title, rd, body }) => (
               <li key={n} className="step" data-sr style={{ "--rd": rd } as React.CSSProperties}>
                 <span className="step-num mono">{n}</span>
@@ -265,20 +241,20 @@ export default function HomePage() {
         <div className="container">
           <header className="section-head" data-sr>
             <p className="eyebrow">— Why Verix</p>
-            <h2 className="display-2">Take out the card. Take out the fraud.</h2>
+            <h2 className="display-2">The fastest checkout is the one that disappears.</h2>
             <p className="body-1 section-sub">
-              The card is the thing that gets stolen, skimmed, and disputed. Replace it
-              with a face, and the most expensive fraud at the counter has nothing left
-              to attack.
+              No card to reach for, no PIN to type, no phone to unlock. Shoppers
+              look at the terminal and they&apos;re done — in under 400&nbsp;ms. The
+              security and fraud protection come with it, at the architecture level.
             </p>
           </header>
 
           <div className="feature-grid">
             {[
-              { n: "01", title: "No card to steal", rd: "0s", body: "No card number, magstripe, or token sits at the counter. Skimming, cloning, and lost-or-stolen card fraud have nothing to work with." },
-              { n: "02", title: "No chargeback fraud", rd: ".08s", body: "Every charge carries biometric proof the account holder was present and approved it. \"I didn't buy this\" disputes don't hold up." },
-              { n: "03", title: "Faster lines", rd: ".16s", body: "A face scan clears in under 400 ms. No card tap, no PIN, no phone — the shopper looks at the terminal and goes." },
-              { n: "04", title: "Nothing to breach", rd: ".24s", body: "Verix stores one-way face templates, not photos or card data. A breach of your terminals yields nothing an attacker can use or sell." },
+              { n: "01", title: "Under 400 ms, every time.", rd: "0s", body: "A face scan clears in under 400 ms. No card tap, no PIN, no phone — the shopper looks at the terminal and walks away." },
+              { n: "02", title: "Enroll once. Pay everywhere.", rd: ".08s", body: "One enrollment links a shopper's face to their payment method. Every Verix-enabled checkout after that requires nothing from them." },
+              { n: "03", title: "No card to steal.", rd: ".16s", body: "No card number, magstripe, or token sits at the counter. Skimming, cloning, and fraud have nothing to work with." },
+              { n: "04", title: "Every charge carries proof.", rd: ".24s", body: "Biometric consent is attached to every transaction. Friendly fraud disputes arrive with evidence already on file." },
             ].map(({ n, title, rd, body }) => (
               <article key={n} className="feature-card" data-sr style={{ "--rd": rd } as React.CSSProperties}>
                 <span className="feature-index mono">{n}</span>
@@ -321,140 +297,31 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── TERMINALS ── */}
-      <section className="section section-surfaces" id="surfaces">
+      {/* ── PROOF NUMBERS ── */}
+      <section className="section section-dark">
         <div className="container">
-          <header className="section-head" data-sr>
-            <p className="eyebrow">— Verification, two modes</p>
-            <h2 className="display-2">Same scan. Two surfaces.</h2>
-            <p className="body-1 section-sub">
-              Retail counter on Ghost White; back-of-house terminal on Ink Black. The
-              violet verify action is identical on both — the brand signal stays
-              constant while the shell adapts to the environment.
+          <header className="section-head" data-sr="">
+            <p className="eyebrow eyebrow-on-dark">— By the numbers</p>
+            <h2 className="display-2 on-dark">Built to perform at every counter.</h2>
+            <p className="body-1 on-dark-muted">
+              Verix is engineered for the physical world — high-volume, real-time,
+              with no tolerance for false accepts or slow checkouts.
             </p>
           </header>
-
-          <div className="terminal-grid">
-            {/* Light terminal */}
-            <figure className="terminal terminal-light" data-sr="left">
-              <figcaption className="terminal-tag">
-                <span className="mono">Retail counter</span>
-                <span className="mono muted">Light · Ghost White</span>
-              </figcaption>
-              <div className="terminal-body">
-                <div className="terminal-status mono">
-                  <span><span className="dot" />verix · t_29C · live</span>
-                  <span className="muted">14:08:11</span>
+          <div className="proof-grid">
+            {[
+              { num: "380", unit: "ms", label: "Median face verification time" },
+              { num: "1", unit: "/ 1M", label: "False accept rate — industry-leading accuracy" },
+              { num: "0", unit: "", label: "Photos or card numbers stored at the terminal" },
+              { num: "100", unit: "%", label: "Of transactions with biometric consent proof attached" },
+            ].map((s, i) => (
+              <div key={s.label} className="proof-card" data-sr="" style={{ "--rd": `${i * 0.07}s` } as React.CSSProperties}>
+                <div className="proof-num mono">
+                  {s.num}<span className="proof-unit">{s.unit}</span>
                 </div>
-                <p className="caps-label">Merchant</p>
-                <p className="heading-1 terminal-merchant">Northcap Outfitters · Store 014</p>
-                <p className="caps-label">Amount due</p>
-                <p className="mono-amount terminal-amount"><span className="unit pre">$</span>84.20</p>
-                <div className="terminal-rule" />
-                <dl className="line-items mono">
-                  <div><dt>2 × Trail shell · L</dt><dd>72.00</dd></div>
-                  <div><dt>Tax · 8.5%</dt><dd>6.12</dd></div>
-                  <div><dt>Tip</dt><dd>6.08</dd></div>
-                </dl>
-                <div className="verify-row mono">
-                  <span className="verify-label"><ScanIcon />Face match</span>
-                  <span className="verify-val">0.992 · liveness ✓</span>
-                </div>
-                <div className="terminal-actions" aria-hidden="true">
-                  <button className="btn btn-outline" type="button" tabIndex={-1}>Cancel</button>
-                  <button className="btn btn-violet" type="button" tabIndex={-1}>Verify&nbsp;·&nbsp;$&nbsp;84.20</button>
-                </div>
-                <p className="terminal-foot mono">verix · enroll → verify → authorize · matched in 380 ms</p>
+                <p className="proof-label">{s.label}</p>
               </div>
-            </figure>
-
-            {/* Dark terminal */}
-            <figure className="terminal terminal-dark" data-sr="right" style={{ "--rd": ".08s" } as React.CSSProperties}>
-              <figcaption className="terminal-tag">
-                <span className="mono">Back-of-house terminal</span>
-                <span className="mono muted">Dark · Ink Black</span>
-              </figcaption>
-              <div className="terminal-body">
-                <div className="terminal-status mono">
-                  <span><span className="dot" />verix · t_07A · live</span>
-                  <span className="muted">14:08:11</span>
-                </div>
-                <p className="caps-label">Merchant</p>
-                <p className="heading-1 terminal-merchant">Saint Marin Hotel · F&amp;B / Bar</p>
-                <p className="caps-label">Amount due</p>
-                <p className="mono-amount terminal-amount"><span className="unit pre">$</span>84.20</p>
-                <div className="terminal-rule" />
-                <dl className="line-items mono">
-                  <div><dt>Tab 022 · 4 items</dt><dd>72.00</dd></div>
-                  <div><dt>Service · 8.5%</dt><dd>6.12</dd></div>
-                  <div><dt>Tip</dt><dd>6.08</dd></div>
-                </dl>
-                <div className="verify-row mono">
-                  <span className="verify-label"><ScanIcon />Face match</span>
-                  <span className="verify-val">0.994 · liveness ✓</span>
-                </div>
-                <div className="terminal-actions" aria-hidden="true">
-                  <button className="btn btn-outline btn-outline-dark" type="button" tabIndex={-1}>Cancel</button>
-                  <button className="btn btn-violet" type="button" tabIndex={-1}>Verify&nbsp;·&nbsp;$&nbsp;84.20</button>
-                </div>
-                <p className="terminal-foot mono">verix · enroll → verify → authorize · matched in 380 ms</p>
-              </div>
-            </figure>
-          </div>
-        </div>
-      </section>
-
-      {/* ── DEVELOPERS ── */}
-      <section className="section section-dev" id="developers">
-        <div className="container dev-grid">
-          <div className="dev-copy" data-sr>
-            <p className="eyebrow eyebrow-on-dark">— Developers</p>
-            <h2 className="display-2 on-dark">One SDK for every counter you run.</h2>
-            <p className="body-1 on-dark-muted">
-              A single API and SDKs for enrollment, liveness, and verification. Drop
-              Verix into your existing POS — the shopper verifies with a face, and you
-              get an authorization plus a signed consent proof on every charge.
-            </p>
-            <div className="hero-cta">
-              <Link className="btn btn-violet" href="#pricing">Read the docs</Link>
-              <Link className="btn btn-outline btn-outline-dark" href="#pricing">Get API keys</Link>
-            </div>
-          </div>
-
-          <div
-            className="code-window"
-            role="img"
-            aria-label="Example Verix face-verification API response"
-            data-sr="scale"
-            style={{ "--rd": ".12s" } as React.CSSProperties}
-          >
-            <div className="code-bar mono">
-              <span><span className="dot" />verix-cli · verify</span>
-              <span className="muted">380ms</span>
-            </div>
-            <pre className="code-block mono">
-              <span className="c-com"># verify a charge with the shopper&apos;s face</span>{"\n"}
-              <span className="c-cmd">$</span>{" verix verify create \\\n    --endpoint "}
-              <span className="c-str">ep_handheld</span>{" \\\n    --amount "}
-              <span className="c-num">8420</span>{" --currency "}
-              <span className="c-str">usd</span>{"\n\n"}
-              <span className="c-key">{"{"}</span>{"\n"}
-              {"  "}<span className="c-prop">&quot;id&quot;</span>{"            : "}
-              <span className="c-str">&quot;txn_01HZQ4K9P3F7D8&quot;</span>{",\n  "}
-              <span className="c-prop">&quot;status&quot;</span>{"        : "}
-              <span className="c-acc">&quot;approved&quot;</span>{",\n  "}
-              <span className="c-prop">&quot;method&quot;</span>{"        : "}
-              <span className="c-str">&quot;face&quot;</span>{",\n  "}
-              <span className="c-prop">&quot;match_score&quot;</span>{"   : "}
-              <span className="c-num">0.992</span>{",\n  "}
-              <span className="c-prop">&quot;liveness&quot;</span>{"      : "}
-              <span className="c-acc">&quot;pass&quot;</span>{",\n  "}
-              <span className="c-prop">&quot;consent_proof&quot;</span>{" : "}
-              <span className="c-str">&quot;cp_3F7D8K9P3&quot;</span>{",\n  "}
-              <span className="c-prop">&quot;latency_ms&quot;</span>{"    : "}
-              <span className="c-num">380</span>{"\n"}
-              <span className="c-key">{"}"}</span>
-            </pre>
+            ))}
           </div>
         </div>
       </section>
@@ -492,8 +359,8 @@ export default function HomePage() {
             billed by settlement. Talk to our team about retail, gaming, restaurants,
             and beyond.
           </p>
-          <div className="hero-cta centered" id="contact">
-            <Link className="btn btn-violet" href="#contact">Talk to sales</Link>
+          <div className="hero-cta centered">
+            <Link className="btn btn-violet" href="/merchants#contact">Talk to sales</Link>
             <Link className="btn btn-outline" href="#how">See how it works</Link>
           </div>
         </div>

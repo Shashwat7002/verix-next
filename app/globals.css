@@ -535,9 +535,10 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
   transition: border-color .18s ease, transform .18s ease;
 }
 .team-card:hover { border-color: rgba(91,71,224,0.35); transform: translateY(-3px); }
-/* center 4th and 5th cards in the second row */
+/* reverse-triangle: 3 → 2 → 1 centered */
 .team-card:nth-child(4) { grid-column: 2 / span 2; }
 .team-card:nth-child(5) { grid-column: 4 / span 2; }
+.team-card:nth-child(6) { grid-column: 3 / span 2; }
 
 .team-avatar {
   width: 64px; height: 64px;
@@ -639,8 +640,9 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
   /* team: 4-col grid; last card centered */
   .team-grid { grid-template-columns: repeat(4, 1fr); }
   .team-card { grid-column: span 2; }
-  .team-card:nth-child(4) { grid-column: span 2; }      /* reset absolute position */
-  .team-card:nth-child(5) { grid-column: 2 / span 2; } /* center on 4-col grid */
+  .team-card:nth-child(4) { grid-column: span 2; }
+  .team-card:nth-child(5) { grid-column: 2 / span 2; }
+  .team-card:nth-child(6) { grid-column: 2 / span 2; }
 }
 @media (max-width: 900px) {
   .primary-nav, .link-signin { display: none; }
@@ -678,7 +680,8 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
   .team-grid { grid-template-columns: 1fr; }
   .team-card,
   .team-card:nth-child(4),
-  .team-card:nth-child(5) { grid-column: span 1; }
+  .team-card:nth-child(5),
+  .team-card:nth-child(6) { grid-column: span 1; }
 }
 
 /* ============================================================
@@ -711,6 +714,34 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
 .form-field input::placeholder { color: var(--slate); opacity: 0.65; }
 .form-field input:focus   { border-color: var(--violet); background: var(--white); }
 .form-field input:disabled{ opacity: 0.55; cursor: not-allowed; }
+
+.form-field textarea {
+  font-family: var(--sans); font-size: 15px; color: var(--ink);
+  padding: 13px 16px; resize: vertical; min-height: 120px;
+  border: 1.5px solid var(--hairline); border-radius: 10px;
+  background: var(--ghost);
+  transition: border-color .15s ease, background .15s ease;
+  outline: none; width: 100%; line-height: 1.55;
+}
+.form-field textarea::placeholder { color: var(--slate); opacity: 0.65; }
+.form-field textarea:focus   { border-color: var(--violet); background: var(--white); }
+.form-field textarea:disabled{ opacity: 0.55; cursor: not-allowed; }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 560px) { .form-row { grid-template-columns: 1fr; } }
+
+.form-field select {
+  font-family: var(--sans); font-size: 15px; color: var(--ink);
+  padding: 13px 40px 13px 16px;
+  border: 1.5px solid var(--hairline); border-radius: 10px;
+  background: var(--ghost) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237A7A8C' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 14px center;
+  transition: border-color .15s ease, background-color .15s ease;
+  outline: none; width: 100%; cursor: pointer;
+  -webkit-appearance: none; appearance: none;
+}
+.form-field select:focus    { border-color: var(--violet); background-color: var(--white); }
+.form-field select:disabled { opacity: 0.55; cursor: not-allowed; }
+.form-field select option[value=""] { color: var(--slate); }
 
 .form-error {
   font-size: 13.5px; font-weight: 500; color: #b91c1c;
@@ -873,6 +904,28 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
 }
 .biz-num sup { font-size: 0.44em; color: #b3a9f2; vertical-align: super; }
 .biz-label { font-size: 14px; color: #9a9aa8; line-height: 1.5; max-width: 22ch; }
+
+/* ── Proof numbers grid (home page) ── */
+.proof-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px;
+  margin-top: 56px; border-radius: var(--radius); overflow: hidden;
+}
+.proof-card {
+  background: var(--ink); padding: 40px 32px;
+  border-right: 1px solid rgba(255,255,255,0.07);
+  transition: background .18s ease;
+}
+.proof-card:last-child { border-right: none; }
+.proof-card:hover { background: #1a1926; }
+.proof-num {
+  font-size: clamp(40px, 4.5vw, 58px); font-weight: 500;
+  letter-spacing: -0.04em; line-height: 1;
+  color: var(--white); margin-bottom: 14px;
+}
+.proof-unit { font-size: 0.48em; color: #b3a9f2; margin-left: 3px; }
+.proof-label { font-size: 13.5px; color: #9a9aa8; line-height: 1.55; max-width: 20ch; }
+@media (max-width: 900px) { .proof-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .proof-grid { grid-template-columns: 1fr; } }
 
 /* ============================================================
    MERCHANTS PAGE — value bar, integration table, pilot card

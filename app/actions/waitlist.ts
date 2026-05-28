@@ -42,6 +42,7 @@ export async function submitWaitlist(
   if (!name)               return { ok: false, error: "Full name is required." };
   if (!email)              return { ok: false, error: "Email address is required." };
   if (!validateEmail(email)) return { ok: false, error: "Please enter a valid email address." };
+  if (!phone)              return { ok: false, error: "Phone number is required." };
   if (name.length > 120)   return { ok: false, error: "Name is too long." };
   if (phone.length > 30)   return { ok: false, error: "Phone number is too long." };
 
@@ -62,14 +63,14 @@ export async function submitWaitlist(
     await sheets.spreadsheets.values.append({
       spreadsheetId: sheetId,
       range: `${tab}!A:D`,
-      valueInputOption: "USER_ENTERED",
+      valueInputOption: "RAW",
       insertDataOption: "INSERT_ROWS",
       requestBody: {
         values: [[
           new Date().toLocaleString("en-US", { timeZone: "UTC", hour12: false }),
           name,
           email,
-          phone || "—",
+          phone,
         ]],
       },
     });

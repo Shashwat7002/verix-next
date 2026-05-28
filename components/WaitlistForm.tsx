@@ -73,14 +73,12 @@ export default function WaitlistForm() {
       </div>
 
       <div className="form-field">
-        <label htmlFor="wl-phone">
-          Phone number{" "}
-          <span className="optional">(optional)</span>
-        </label>
+        <label htmlFor="wl-phone">Phone number</label>
         <input
           id="wl-phone"
           name="phone"
           type="tel"
+          required
           autoComplete="tel"
           placeholder="+1 555 000 0000"
           disabled={isPending}

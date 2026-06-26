@@ -50,14 +50,14 @@ const orgSchema = {
     },
     {
       "@type": "OrganizationRole",
-      member: { "@type": "Person", name: "Marcelo Long", jobTitle: "CMO & Founder" },
-      roleName: "CMO & Founder",
+      member: { "@type": "Person", name: "Marcelo Long", jobTitle: "CMO & Co-Founder" },
+      roleName: "CMO & Co-Founder",
       startDate: "2024",
     },
     {
       "@type": "OrganizationRole",
-      member: { "@type": "Person", name: "Baibhav Das", jobTitle: "COO & Founder" },
-      roleName: "COO & Founder",
+      member: { "@type": "Person", name: "Baibhav Das", jobTitle: "COO & Co-Founder" },
+      roleName: "COO & Co-Founder",
       startDate: "2024",
     },
     {
@@ -121,14 +121,14 @@ const team = [
   {
     initials: "ML",
     name: "Marcelo Long",
-    role: "CMO & Founder",
+    role: "CMO & Co-Founder",
     bio: "Marcelo drives market positioning and operator adoption for Verix. He translates the complexity of biometric infrastructure into clear operator value — faster throughput, zero chargebacks, and verifiable compliance. His work ensures every operator understands exactly what they're getting before they sign.",
     delay: ".12s",
   },
   {
     initials: "BD",
     name: "Baibhav Das",
-    role: "COO & Founder",
+    role: "COO & Co-Founder",
     bio: "Baibhav runs the operational engine behind Verix: deployment pipelines, operator onboarding, and cross-vertical partnerships. His background in high-throughput operations means Verix scales without losing precision — whether that's 10 terminals or 10,000.",
     delay: ".18s",
   },
@@ -197,19 +197,6 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* ─── Roles strip ─── */}
-      <section className="strip" aria-label="Leadership roles">
-        <div className="container">
-          <ul className="strip-list">
-            <li>Chief Executive Officer</li>
-            <li>President</li>
-            <li>Chief Marketing Officer</li>
-            <li>Chief Operating Officer</li>
-            <li>Chief Technology Officer</li>
-            <li>Chief Security Officer</li>
-          </ul>
-        </div>
-      </section>
 
       {/* ─── Team section ─── */}
       <section className="section" id="team">

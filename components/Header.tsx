@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
 
 const VMark = () => (
@@ -19,8 +20,33 @@ const VMark = () => (
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
+  const pathname = usePathname();
 
   const close = () => setOpen(false);
+
+  /* ── Highlight #how on homepage via IntersectionObserver ── */
+  useEffect(() => {
+    if (pathname !== "/") { setActiveSection(""); return; }
+    const sections = ["how", "proof", "industry", "faq"];
+    const observers: IntersectionObserver[] = [];
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const obs = new IntersectionObserver(
+        ([entry]) => { if (entry.isIntersecting) setActiveSection(id); },
+        { rootMargin: "-40% 0px -40% 0px" }
+      );
+      obs.observe(el);
+      observers.push(obs);
+    });
+    return () => observers.forEach((obs) => obs.disconnect());
+  }, [pathname]);
+
+  function isActive(href: string) {
+    if (href.startsWith("/#")) return pathname === "/" && activeSection === href.slice(2);
+    return pathname === href;
+  }
 
   /* ── Scroll awareness ── */
   useEffect(() => {
@@ -46,11 +72,11 @@ export default function Header() {
         </Link>
 
         <nav className="primary-nav" aria-label="Primary">
-          <Link href="/#how">How it works</Link>
-          <Link href="/consumers">For Consumers</Link>
-          <Link href="/merchants">For Merchants</Link>
-          <Link href="/partners">Partners</Link>
-          <Link href="/team">Team</Link>
+          <Link href="/#how"        aria-current={isActive("/#how")        ? "page" : undefined}>How it works</Link>
+          <Link href="/consumers"   aria-current={isActive("/consumers")   ? "page" : undefined}>For Consumers</Link>
+          <Link href="/merchants"   aria-current={isActive("/merchants")   ? "page" : undefined}>For Merchants</Link>
+          <Link href="/partners"    aria-current={isActive("/partners")    ? "page" : undefined}>Partners</Link>
+          <Link href="/team"        aria-current={isActive("/team")        ? "page" : undefined}>Team</Link>
         </nav>
 
         <div className="header-actions">
@@ -108,7 +134,7 @@ export default function Header() {
                     visible:  { opacity: 1, x: 0, transition: { duration: 0.28, ease: [0.22, 1, 0.36, 1] } },
                   }}
                 >
-                  <Link href={href} onClick={close}>{label}</Link>
+                  <Link href={href} onClick={close} aria-current={isActive(href) ? "page" : undefined}>{label}</Link>
                 </motion.div>
               ))}
               <motion.div

@@ -124,7 +124,7 @@ export default function MerchantsPage() {
         <div className="container">
           <div style={{ maxWidth: "780px" }}>
             <p className="eyebrow reveal" style={{ "--rd": "0s" } as React.CSSProperties}>
-              — For Operators
+              — For Merchants
             </p>
             <h1 className="display-1 reveal merchants-hero" style={{ "--rd": ".07s" } as React.CSSProperties}>
               Checkout in under<br />

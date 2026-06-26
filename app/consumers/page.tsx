@@ -150,7 +150,7 @@ export default function ConsumersPage() {
         <div className="container hero-grid">
           <div>
             <p className="eyebrow reveal" style={{ "--rd": "0s" } as React.CSSProperties}>
-              — For Shoppers
+              — For Consumers
             </p>
             <h1 className="display-1 reveal" style={{ "--rd": ".07s" } as React.CSSProperties}>
               Your face is<br />your wallet.

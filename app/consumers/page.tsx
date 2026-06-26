@@ -352,7 +352,7 @@ export default function ConsumersPage() {
           <h2 className="display-2">Want Verix at your store?</h2>
           <p className="body-1 section-sub centered">
             Verix deploys as software-only on your existing terminals.
-            Zero implementation fees for the 90-day pilot.
+            Talk to the team to learn about pilot terms.
           </p>
           <div className="hero-cta centered">
             <Link className="btn btn-violet" href="/merchants">For merchants</Link>

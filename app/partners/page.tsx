@@ -52,26 +52,6 @@ const marketNumbers = [
   },
 ];
 
-const bizModel = [
-  {
-    num: "0.6",
-    sup: "%",
-    label: "Per-transaction fee — versus ~3% standard card interchange",
-    delay: "0s",
-  },
-  {
-    num: "40",
-    sup: "%",
-    label: "Revenue share of verified fraud savings returned to the operator partner",
-    delay: ".09s",
-  },
-  {
-    num: "$0",
-    sup: "",
-    label: "Implementation fees during the 90-day pilot — zero barrier to first deployment",
-    delay: ".18s",
-  },
-];
 
 const thesisPoints = [
   "The card is the attack surface. Remove it, and both fraud vectors — stolen-card and chargeback — collapse simultaneously.",
@@ -189,8 +169,8 @@ export default function PartnersPage() {
                   <p className="traction-stat-label">Target txns / day</p>
                 </div>
                 <div>
-                  <p className="traction-stat-num">0.6%</p>
-                  <p className="traction-stat-label">Processing fee</p>
+                  <p className="traction-stat-num">{"<"}2s</p>
+                  <p className="traction-stat-label">End-to-end checkout</p>
                 </div>
               </div>
             </StaggerCard>
@@ -229,33 +209,6 @@ export default function PartnersPage() {
         </div>
       </section>
 
-      {/* ─── Business model ─── */}
-      <section className="section section-dev">
-        <div className="container">
-          <Reveal tag="header" className="section-head">
-            <p className="eyebrow eyebrow-on-dark">— Revenue model</p>
-            <h2 className="display-2 on-dark" style={{ marginTop: "18px" }}>
-              Transaction-level revenue. At every checkout.
-            </h2>
-            <p className="on-dark-muted body-1">
-              Verix charges per verified transaction — a model that scales linearly with
-              merchant volume and creates no adoption ceiling. The pilot commercial
-              framework is designed to remove every barrier to a first deployment.
-            </p>
-          </Reveal>
-
-          <StaggerContainer tag="div" className="biz-grid">
-            {bizModel.map((b) => (
-              <StaggerCard key={b.label} tag="div" className="biz-card" darkBg liftY={4}>
-                <div className="biz-num">
-                  {b.num}<sup>{b.sup}</sup>
-                </div>
-                <p className="biz-label">{b.label}</p>
-              </StaggerCard>
-            ))}
-          </StaggerContainer>
-        </div>
-      </section>
 
       {/* ─── Team callout ─── */}
       <section className="section">

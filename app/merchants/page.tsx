@@ -8,13 +8,13 @@ import { StaggerContainer, StaggerCard, StaggerItem } from "@/components/motion/
 export const metadata: Metadata = {
   title: "Verix for Merchants — Cut Card Fees. Eliminate Chargebacks.",
   description:
-    "Verix processes at 0.6% — versus 3–5% card interchange. Software-only on your existing Ingenico and Verifone terminals. Zero chargebacks. 90-day pilot with no implementation fees.",
+    "Software-only biometric payments on your existing Ingenico and Verifone terminals. Zero chargebacks. No hardware replacement. Start a structured 90-day pilot.",
   alternates: { canonical: "/merchants" },
   openGraph: {
     url: "/merchants",
     title: "Verix for Merchants — Cut Card Fees. Eliminate Chargebacks.",
     description:
-      "0.6% processing. Zero chargebacks. No hardware rip-and-replace. Start a 90-day pilot with zero implementation fees.",
+      "Zero chargebacks. No hardware rip-and-replace. Biometric payments on your existing terminals. Start a structured 90-day pilot.",
   },
 };
 
@@ -103,11 +103,11 @@ const integrations = [
 ];
 
 const pilotPerks = [
-  { strong: "Zero implementation fees", rest: " for the full 90-day pilot cycle." },
-  { strong: "0.6% per transaction", rest: " — versus ~3% standard card interchange." },
-  { strong: "40% revenue share", rest: " of verified fraud savings against your historical baseline." },
   { strong: "No hardware replacement", rest: " — software-only on your existing terminals." },
   { strong: "Biometric proof on every transaction", rest: " — the record that defeats every friendly fraud dispute." },
+  { strong: "Structured 90-day deployment", rest: " — assessment, integration, training, and live launch." },
+  { strong: "No long-term commitment", rest: " required to start a pilot." },
+  { strong: "Pricing on request", rest: " — contact the team to discuss your volume and structure." },
 ];
 
 const faqItems = faqSchema.mainEntity;
@@ -133,8 +133,8 @@ export default function MerchantsPage() {
             <p className="body-1 hero-lede reveal merchants-lede" style={{ "--rd": ".14s" } as React.CSSProperties}>
               Verix is a software-only biometric payment layer for your existing
               Ingenico and Verifone terminals. Shoppers pay with a glance — verified
-              in under 400&nbsp;ms, no card required. Lower processing fees and
-              eliminated chargebacks come with it.
+              in under 400&nbsp;ms, no card required. Eliminated chargebacks
+              and competitive processing rates come with it.
             </p>
             <div className="hero-cta reveal" style={{ "--rd": ".21s" } as React.CSSProperties}>
               <Link className="btn btn-violet" href="#contact">Start a pilot</Link>
@@ -145,8 +145,8 @@ export default function MerchantsPage() {
           {/* Value bar */}
           <div className="value-bar reveal" data-sr="scale" style={{ "--rd": ".28s" } as React.CSSProperties}>
             <div className="value-bar-item">
-              <div className="value-bar-num"><span className="accent">0.6</span>%</div>
-              <p className="value-bar-label">Processing fee — vs ~3% card interchange</p>
+              <div className="value-bar-num"><span className="accent">0</span></div>
+              <p className="value-bar-label">Card data stored on merchant systems</p>
             </div>
             <div className="value-bar-item">
               <div className="value-bar-num">$0</div>
@@ -191,7 +191,7 @@ export default function MerchantsPage() {
             {[
               { n: "01", h: "Sub-2-second checkout.", b: "Biometric verification completes in under 400 ms. Shoppers look at the terminal and go — no card, no PIN, no phone. Lines move faster." },
               { n: "02", h: "No hardware replacement.", b: "Verix is a software-only injection into your existing Ingenico or Verifone terminals. Your acquiring relationships, your network. Nothing to rip out." },
-              { n: "03", h: "Significantly lower processing cost.", b: "Verix processes at 0.6% per transaction versus standard card interchange rates — a material difference at any meaningful volume." },
+              { n: "03", h: "Significantly lower processing cost.", b: "Verix replaces card interchange with a competitive per-transaction fee — a material difference at any meaningful volume. Contact us for pricing." },
               { n: "04", h: "Chargebacks eliminated at source.", b: "Every transaction carries biometric proof of presence and consent. Friendly fraud disputes arrive with evidence already attached." },
             ].map((f) => (
               <StaggerCard key={f.n} tag="div" className="feature-card">
@@ -213,7 +213,7 @@ export default function MerchantsPage() {
             <p className="body-1 section-sub">
               Verix fits into your existing infrastructure. The deployment timeline is
               fixed — assessment, integration, training, launch — with implementation
-              fees entirely waived for the pilot cycle.
+              structure available — contact the team for pilot terms.
             </p>
           </Reveal>
           <StaggerContainer tag="div" className="deploy-grid">
@@ -310,15 +310,14 @@ export default function MerchantsPage() {
             </div>
             <div className="pilot-cta-col">
               <p className="body-1 on-dark" style={{ maxWidth: "32ch", lineHeight: "1.55" }}>
-                We offer a structured 90-day pilot with implementation fees waived. The
-                only variable is transaction volume — and you keep 40% of every fraud
-                saving we prove against your baseline.
+                We offer a structured 90-day pilot across assessment, integration,
+                and live deployment. Talk to the team about pilot terms and pricing
+                for your volume.
               </p>
               <Link className="btn btn-violet" href="#contact">
                 Talk to the team
               </Link>
               <p className="pilot-fine">
-                Pilot contracts convert to a standard SaaS + per-transaction model.
                 No long-term commitment required to start.
               </p>
             </div>
@@ -352,7 +351,7 @@ export default function MerchantsPage() {
             <h2 className="display-2">Let&apos;s talk about your estate.</h2>
             <p className="body-1 section-sub">
               Tell us about your setup and we&apos;ll come back with a tailored
-              pilot proposal — zero implementation fees, no long-term commitment required.
+              pilot proposal — no long-term commitment required.
             </p>
           </Reveal>
 

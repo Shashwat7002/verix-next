@@ -251,8 +251,7 @@ export default function TeamPage() {
           <p className="eyebrow">— Talk to sales</p>
           <h2 className="display-2">Deploy Verix at your terminals.</h2>
           <p className="body-1 section-sub centered">
-            Volume-based pricing, billed by settlement. Talk to the team about
-            retail, gaming, restaurants, and beyond.
+            Talk to the team about retail, gaming, restaurants, and beyond.
           </p>
           <div className="hero-cta centered">
             <Link className="btn btn-violet" href="/merchants#contact">

@@ -350,9 +350,8 @@ export default function HomePage() {
           <p className="eyebrow">— Talk to sales</p>
           <h2 className="display-2">Take the card out of the equation.</h2>
           <p className="body-1 section-sub centered">
-            See Verix verify a live payment at your counter. Volume-based pricing,
-            billed by settlement. Talk to our team about retail, gaming, restaurants,
-            and beyond.
+            See Verix verify a live payment at your counter. Talk to our team about
+            retail, gaming, restaurants, and beyond.
           </p>
           <div className="hero-cta centered">
             <Link className="btn btn-violet" href="/merchants#contact">Talk to sales</Link>

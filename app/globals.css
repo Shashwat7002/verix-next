@@ -543,10 +543,11 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
   transition: border-color .18s ease, transform .18s ease;
 }
 .team-card:hover { border-color: rgba(91,71,224,0.35); }
-/* reverse-triangle: 3 → 2 → 1 centered */
+/* 3 → 2 → 2 layout */
 .team-card:nth-child(4) { grid-column: 2 / span 2; }
 .team-card:nth-child(5) { grid-column: 4 / span 2; }
-.team-card:nth-child(6) { grid-column: 3 / span 2; }
+.team-card:nth-child(6) { grid-column: 2 / span 2; }
+.team-card:nth-child(7) { grid-column: 4 / span 2; }
 
 .team-avatar {
   width: 64px; height: 64px;
@@ -645,12 +646,13 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
   .feature-index { margin-bottom: 32px; }
   .industry-grid { grid-template-columns: repeat(2, 1fr); }
   .step-grid { grid-template-columns: repeat(2, 1fr); gap: 28px 24px; }
-  /* team: 4-col grid; 3 rows of 2 */
+  /* team: 4-col grid; 2 per row, 7th card centered */
   .team-grid { grid-template-columns: repeat(4, 1fr); }
   .team-card { grid-column: span 2; }
   .team-card:nth-child(4) { grid-column: span 2; }
   .team-card:nth-child(5) { grid-column: span 2; }
   .team-card:nth-child(6) { grid-column: span 2; }
+  .team-card:nth-child(7) { grid-column: 2 / span 2; }
 }
 @media (max-width: 900px) {
   .primary-nav, .link-signin { display: none; }
@@ -697,7 +699,8 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
   .team-card,
   .team-card:nth-child(4),
   .team-card:nth-child(5),
-  .team-card:nth-child(6) { grid-column: span 1; }
+  .team-card:nth-child(6),
+  .team-card:nth-child(7) { grid-column: span 1; }
 }
 
 /* ============================================================

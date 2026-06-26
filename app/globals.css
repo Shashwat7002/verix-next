@@ -543,11 +543,8 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
   transition: border-color .18s ease, transform .18s ease;
 }
 .team-card:hover { border-color: rgba(91,71,224,0.35); }
-/* 3 → 2 → 2 layout */
-.team-card:nth-child(4) { grid-column: 2 / span 2; }
-.team-card:nth-child(5) { grid-column: 4 / span 2; }
-.team-card:nth-child(6) { grid-column: 2 / span 2; }
-.team-card:nth-child(7) { grid-column: 4 / span 2; }
+/* 3 → 3 → 1 layout: first 6 auto-fill rows, 7th centered */
+.team-card:nth-child(7) { grid-column: 3 / span 2; }
 
 .team-avatar {
   width: 64px; height: 64px;

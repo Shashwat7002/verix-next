@@ -44,12 +44,6 @@ const orgSchema = {
     },
     {
       "@type": "OrganizationRole",
-      member: { "@type": "Person", name: "Shashwat Choudhary", jobTitle: "President, Technology" },
-      roleName: "President, Technology",
-      startDate: "2024",
-    },
-    {
-      "@type": "OrganizationRole",
       member: { "@type": "Person", name: "Marcelo Long", jobTitle: "CMO & Co-Founder" },
       roleName: "CMO & Co-Founder",
       startDate: "2024",
@@ -64,6 +58,12 @@ const orgSchema = {
       "@type": "OrganizationRole",
       member: { "@type": "Person", name: "Anirudh Jaiswal", jobTitle: "CTO & Co-Founder" },
       roleName: "CTO & Co-Founder",
+      startDate: "2024",
+    },
+    {
+      "@type": "OrganizationRole",
+      member: { "@type": "Person", name: "Shashwat Choudhary", jobTitle: "President, Technology" },
+      roleName: "President, Technology",
       startDate: "2024",
     },
     {
@@ -118,31 +118,31 @@ const team = [
     delay: "0s",
   },
   {
-    initials: "SC",
-    name: "Shashwat Choudhary",
-    role: "President, Technology",
-    bio: "Shashwat oversees Verix's commercial and strategic direction — from pilot deployments to investor relations and market expansion. He works across every vertical Verix enters, ensuring the business scales with the same precision as the technology.",
-    delay: ".06s",
-  },
-  {
     initials: "ML",
     name: "Marcelo Long",
     role: "CMO & Co-Founder",
     bio: "Marcelo drives market positioning and operator adoption for Verix. He translates the complexity of biometric infrastructure into clear operator value — faster throughput, zero chargebacks, and verifiable compliance. His work ensures every operator understands exactly what they're getting before they sign.",
-    delay: ".12s",
+    delay: ".06s",
   },
   {
     initials: "BD",
     name: "Baibhav Das",
     role: "COO & Co-Founder",
     bio: "Baibhav runs the operational engine behind Verix: deployment pipelines, operator onboarding, and cross-vertical partnerships. His background in high-throughput operations means Verix scales without losing precision — whether that's 10 terminals or 10,000.",
-    delay: ".18s",
+    delay: ".12s",
   },
   {
     initials: "AJ",
     name: "Anirudh Jaiswal",
     role: "CTO & Co-Founder",
     bio: "Anirudh architects the biometric matching pipeline at the core of Verix — 380 ms end-to-end, 1-in-1,000,000 false acceptance rate, ISO 30107, NIST FRVT, and FIDO2 compliant. He leads the engineering team building the credential layer that replaces physical cards at the point of sale.",
+    delay: ".18s",
+  },
+  {
+    initials: "SC",
+    name: "Shashwat Choudhary",
+    role: "President, Technology",
+    bio: "Shashwat oversees Verix's commercial and strategic direction — from pilot deployments to investor relations and market expansion. He works across every vertical Verix enters, ensuring the business scales with the same precision as the technology.",
     delay: ".24s",
   },
   {

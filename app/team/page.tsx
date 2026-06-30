@@ -254,7 +254,7 @@ export default function TeamPage() {
             Talk to the team about retail, gaming, restaurants, and beyond.
           </p>
           <div className="hero-cta centered">
-            <Link className="btn btn-violet" href="/merchants#contact">
+            <Link className="btn btn-violet" href="/merchants">
               Talk to sales
             </Link>
             <Link className="btn btn-outline" href="/#how">

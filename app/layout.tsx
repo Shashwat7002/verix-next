@@ -56,7 +56,25 @@ export const metadata: Metadata = {
     images: ["/og-cover.png"],
   },
   icons: {
-    icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 36'%3E%3Cpath d='M5 6 20 30 35 6' fill='none' stroke='%235B47E0' stroke-width='4.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E",
+    icon: [
+      {
+        url: "/icon.png?v=verix-full-lockup-transparent-20260625",
+        sizes: "256x256",
+        type: "image/png",
+      },
+      {
+        url: "/favicon.ico?v=verix-full-lockup-transparent-20260625",
+        sizes: "any",
+        type: "image/x-icon",
+      },
+    ],
+    apple: [
+      {
+        url: "/apple-icon.png?v=verix-full-lockup-transparent-20260625",
+        sizes: "180x180",
+        type: "image/png",
+      },
+    ],
   },
 };
 

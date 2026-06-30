@@ -8,7 +8,7 @@ import { StaggerContainer, StaggerCard, StaggerItem } from "@/components/motion/
 export const metadata: Metadata = {
   title: "Partners & Investors — Verix",
   description:
-    "Verix is the biometric infrastructure layer replacing card credentials at the physical point of sale. $620B market. $35B problem. Active pilots. Seeking strategic partners.",
+    "Verix is the biometric infrastructure layer replacing card credentials at the physical point of sale. Growing market. Active pilots. Seeking strategic partners.",
   alternates: { canonical: "/partners" },
   openGraph: {
     url: "/partners",
@@ -33,21 +33,21 @@ const webPageSchema = {
 /* ─── Data ─── */
 const marketNumbers = [
   {
-    num: "$620",
-    sup: "B",
-    label: "Projected biometric payments market by 2030",
+    num: "50+",
+    sup: "yrs",
+    label: "The card infrastructure has not fundamentally changed in half a century",
     delay: "0s",
   },
   {
-    num: "$35",
-    sup: "B",
-    label: "Annual global card fraud losses — a structural problem, not a cyclical one",
+    num: "0",
+    sup: "",
+    label: "Card data stored on the merchant side — Verix is credential-free at the terminal",
     delay: ".08s",
   },
   {
-    num: "50",
-    sup: "yrs",
-    label: "The card infrastructure has not fundamentally changed in half a century",
+    num: "0",
+    sup: "",
+    label: "Hardware replacements required — Verix deploys via software on existing terminals",
     delay: ".16s",
   },
 ];
@@ -79,7 +79,7 @@ export default function PartnersPage() {
             <p className="body-1 hero-lede reveal partners-lede" style={{ "--rd": ".14s" } as React.CSSProperties}>
               Verix is not a card replacement app. It is the credential layer that makes the
               card obsolete at the physical point of sale — biometric verification tied
-              directly to a payment token, processed in under two seconds, with zero stored
+              directly to a payment token, processed quickly, with zero stored
               card data on the merchant side.
             </p>
             <div className="hero-cta reveal" style={{ "--rd": ".21s" } as React.CSSProperties}>
@@ -95,7 +95,7 @@ export default function PartnersPage() {
         <div className="container">
           <Reveal tag="header" className="section-head">
             <p className="eyebrow">— Market opportunity</p>
-            <h2 className="display-2">A $620B market built on broken infrastructure.</h2>
+            <h2 className="display-2">A market built on broken infrastructure.</h2>
             <p className="body-1 section-sub">
               Card payments have processed trillions of dollars on a credential designed
               in the 1960s. The 16-digit card number is a shared secret — and shared
@@ -196,7 +196,7 @@ export default function PartnersPage() {
                   <p className="traction-stat-label">Physical locations</p>
                 </div>
                 <div>
-                  <p className="traction-stat-num">5M</p>
+                  <p className="traction-stat-num">Multi-million</p>
                   <p className="traction-stat-label">Target enrollments</p>
                 </div>
                 <div>
@@ -298,7 +298,7 @@ export default function PartnersPage() {
               </div>
 
               <div className="badge-row" style={{ marginTop: "36px" }}>
-                {["$620B Market", "$35B Problem", "Active Pilots", "NDA Available"].map((b) => (
+                {["Growing Market", "Documented Problem", "Active Pilots", "NDA Available"].map((b) => (
                   <span key={b} className="compliance-badge light">{b}</span>
                 ))}
               </div>

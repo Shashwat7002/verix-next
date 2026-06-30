@@ -37,7 +37,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       name: "Verify at checkout",
-      text: "The terminal scans the shopper's face, checks liveness to block spoofs, and matches the template in under 400 milliseconds.",
+      text: "The terminal scans the shopper's face, checks liveness to block spoofs, and matches the template in seconds.",
     },
     {
       "@type": "HowToStep",
@@ -85,7 +85,7 @@ const faqSchema = {
       name: "How fast is checkout with Verix?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "A face scan verifies in under 400 milliseconds — faster than a chip insert. There is no tap, PIN, or phone to fumble with.",
+        text: "A face scan verifies in seconds — faster than a chip insert. There is no tap, PIN, or phone to fumble with.",
       },
     },
     {
@@ -119,7 +119,7 @@ const webPageSchema = {
 };
 
 const featureCards = [
-  { n: "01", title: "Under 400 ms, every time.", rd: "0s",   body: "A face scan clears in under 400 ms. No card tap, no PIN, no phone — the shopper looks at the terminal and walks away." },
+  { n: "01", title: "Sub-second, every time.", rd: "0s",   body: "A face scan clears in seconds. No card tap, no PIN, no phone — the shopper looks at the terminal and walks away." },
   { n: "02", title: "Enroll once. Pay everywhere.", rd: ".08s", body: "One enrollment links a shopper's face to their payment method. Every Verix-enabled checkout after that requires nothing from them." },
   { n: "03", title: "No card to steal.", rd: ".16s",          body: "No card number, magstripe, or token sits at the counter. Skimming, cloning, and fraud have nothing to work with." },
   { n: "04", title: "Every charge carries proof.", rd: ".24s", body: "Biometric consent is attached to every transaction. Friendly fraud disputes arrive with evidence already on file." },
@@ -135,10 +135,10 @@ const industryCards = [
 ];
 
 const proofStats = [
-  { num: 380,  unit: "ms",   label: "Median face verification time" },
-  { num: 1,    unit: "/ 1M", label: "False accept rate — industry-leading accuracy" },
-  { num: 0,    unit: "",     label: "Photos or card numbers stored at the terminal" },
+  { num: 0,    unit: "",     label: "Card numbers stored at the terminal" },
+  { num: 0,    unit: "",     label: "Chargebacks once biometric proof is on file" },
   { num: 100,  unit: "%",    label: "Of transactions with biometric consent proof attached" },
+  { num: 0,    unit: "",     label: "Hardware replacements required to deploy" },
 ];
 
 
@@ -165,12 +165,11 @@ export default function HomePage() {
             </h1>
             <p className="body-1 hero-lede reveal" style={{ "--rd": ".14s" } as React.CSSProperties}>
               Verix replaces the card at the point of sale with a face. Shoppers
-              enroll once, then pay anywhere with a glance — verified in under
-              400&nbsp;ms, no card, no phone, no friction. Fraud protection is
+              enroll once, then pay anywhere with a glance — verified in seconds — no card, no phone, no friction. Fraud protection is
               built in at the architecture level.
             </p>
             <div className="hero-cta reveal" style={{ "--rd": ".21s" } as React.CSSProperties}>
-              <Link className="btn btn-violet" href="/merchants#contact">Talk to sales</Link>
+              <Link className="btn btn-violet" href="/merchants">Talk to sales</Link>
               <Link className="btn btn-outline" href="#how">See how it works</Link>
             </div>
           </div>
@@ -178,19 +177,17 @@ export default function HomePage() {
           <Reveal direction="scale" delay={0.28} tag="aside" className="stats-card" aria-label="Verix at a glance">
             <dl className="stats">
               <div className="stat">
-                <dt className="caps-label">Median verify</dt>
+                <dt className="caps-label">Checkout speed</dt>
                 <dd className="mono-amount accent">
-                  <AnimatedStat value={380} /><span className="unit">ms</span>
-                </dd>
-              </div>
-              <div className="stat">
-                <dt className="caps-label">False accept rate</dt>
-                <dd className="mono-amount">
-                  1<span className="unit">/ 1M</span>
+                  {"<"}2<span className="unit">sec</span>
                 </dd>
               </div>
               <div className="stat">
                 <dt className="caps-label">Card data stored</dt>
+                <dd className="mono-amount">0</dd>
+              </div>
+              <div className="stat">
+                <dt className="caps-label">Hardware needed</dt>
                 <dd className="mono-amount">0</dd>
               </div>
               <div className="stat">
@@ -227,7 +224,7 @@ export default function HomePage() {
             <p className="body-1 section-sub">
               Verix binds a shopper&apos;s payment credential to a face template during a
               one-time enrollment. At checkout, the terminal captures a live face scan,
-              confirms liveness, and matches it to the credential in under 400&nbsp;ms —
+              confirms liveness, and matches it to the credential in seconds —
               then authorizes the charge with cryptographic, biometric proof the real
               account holder approved it.
             </p>
@@ -236,7 +233,7 @@ export default function HomePage() {
           {/* Steps keep data-sr for the ::before border animation */}
           <ol className="step-grid">
             {[
-              { n: "01", title: "Under 400 ms, every time.", rd: "0s",   body: "A face scan clears in under 400 ms. No card tap, no PIN, no phone — the shopper looks at the terminal and walks away." },
+              { n: "01", title: "Sub-second, every time.", rd: "0s",   body: "A face scan clears in seconds. No card tap, no PIN, no phone — the shopper looks at the terminal and walks away." },
               { n: "02", title: "Enroll once. Pay everywhere.", rd: ".08s", body: "One enrollment links a shopper's face to their payment method. Every Verix-enabled checkout after that requires nothing from them." },
               { n: "03", title: "No card to steal.", rd: ".16s",           body: "No card number, magstripe, or token sits at the counter. Skimming, cloning, and fraud have nothing to work with." },
               { n: "04", title: "Every charge carries proof.", rd: ".24s", body: "Biometric consent is attached to every transaction. Friendly fraud disputes arrive with evidence already on file." },
@@ -259,7 +256,7 @@ export default function HomePage() {
             <h2 className="display-2">The fastest checkout is the one that disappears.</h2>
             <p className="body-1 section-sub">
               No card to reach for, no PIN to type, no phone to unlock. Shoppers
-              look at the terminal and they&apos;re done — in under 400&nbsp;ms. The
+              look at the terminal and they&apos;re done — in seconds. The
               security and fraud protection come with it, at the architecture level.
             </p>
           </Reveal>
@@ -354,7 +351,7 @@ export default function HomePage() {
             retail, gaming, restaurants, and beyond.
           </p>
           <div className="hero-cta centered">
-            <Link className="btn btn-violet" href="/merchants#contact">Talk to sales</Link>
+            <Link className="btn btn-violet" href="/merchants">Talk to sales</Link>
             <Link className="btn btn-outline" href="#how">See how it works</Link>
           </div>
         </Reveal>

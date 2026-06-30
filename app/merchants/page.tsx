@@ -52,7 +52,7 @@ const faqSchema = {
       name: "How long does a Verix deployment take?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "A standard 90-day pilot runs from infrastructure assessment (weeks 1–2) through SDK integration and kiosk rollout (month 2) to a live guest-facing deployment by day 90. Implementation fees are waived for the initial pilot cycle.",
+        text: "A standard 90-day pilot runs from infrastructure assessment (weeks 1–2) through SDK integration and kiosk rollout (month 2) to a live guest-facing deployment by day 90. Contact the team for pilot terms and structure.",
       },
     },
   ],
@@ -149,7 +149,7 @@ export default function MerchantsPage() {
               <p className="value-bar-label">Card data stored on merchant systems</p>
             </div>
             <div className="value-bar-item">
-              <div className="value-bar-num">$0</div>
+              <div className="value-bar-num">0</div>
               <p className="value-bar-label">Chargebacks — biometric proof blocks disputes</p>
             </div>
             <div className="value-bar-item">
@@ -189,7 +189,7 @@ export default function MerchantsPage() {
 
           <StaggerContainer tag="div" className="feature-grid">
             {[
-              { n: "01", h: "Sub-2-second checkout.", b: "Biometric verification completes in under 400 ms. Shoppers look at the terminal and go — no card, no PIN, no phone. Lines move faster." },
+              { n: "01", h: "Fast checkout.", b: "Biometric verification completes in seconds. Shoppers look at the terminal and go — no card, no PIN, no phone. Lines move faster." },
               { n: "02", h: "No hardware replacement.", b: "Verix is a software-only injection into your existing Ingenico or Verifone terminals. Your acquiring relationships, your network. Nothing to rip out." },
               { n: "03", h: "Significantly lower processing cost.", b: "Verix replaces card interchange with a competitive per-transaction fee — a material difference at any meaningful volume. Contact us for pricing." },
               { n: "04", h: "Chargebacks eliminated at source.", b: "Every transaction carries biometric proof of presence and consent. Friendly fraud disputes arrive with evidence already attached." },

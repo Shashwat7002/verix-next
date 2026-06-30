@@ -80,7 +80,7 @@ export default function Header() {
         </nav>
 
         <div className="header-actions">
-          <Link className="btn btn-ink" href="/merchants#contact">
+          <Link className="btn btn-ink" href="/merchants">
             Talk to sales
           </Link>
           <button
@@ -143,7 +143,7 @@ export default function Header() {
                   visible: { opacity: 1, x: 0, transition: { duration: 0.28, ease: [0.22, 1, 0.36, 1] } },
                 }}
               >
-                <Link className="btn btn-violet" href="/merchants#contact" onClick={close}>
+                <Link className="btn btn-violet" href="/merchants" onClick={close}>
                   Talk to sales
                 </Link>
               </motion.div>

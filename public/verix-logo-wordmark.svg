@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 56" width="260" height="56" role="img" aria-label="Verix">
+  <!-- V-mark chevron -->
+  <path d="M10 14 L28 42 L46 14" fill="none" stroke="#5B47E0" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Rule separator -->
+  <rect x="60" y="12" width="1.5" height="32" fill="#DDDDE8" rx="1"/>
+  <!-- VERIX wordmark -->
+  <text x="76" y="37"
+    font-family="'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif"
+    font-size="22"
+    font-weight="700"
+    fill="#0F0E17"
+    letter-spacing="0.14em">VERIX</text>
+</svg>

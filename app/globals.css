@@ -543,8 +543,25 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
   transition: border-color .18s ease, transform .18s ease;
 }
 .team-card:hover { border-color: rgba(91,71,224,0.35); }
-/* 3 → 3 → 1 layout: first 6 auto-fill rows, 7th centered */
-.team-card:nth-child(7) { grid-column: 3 / span 2; }
+/* 3 → 3 → 2 layout: first 6 auto-fill, last 2 centered */
+.team-card:nth-child(7) { grid-column: 2 / span 2; }
+.team-card:nth-child(8) { grid-column: 4 / span 2; }
+
+/* Board grid: always 2 columns */
+.board-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  list-style: none; margin: 0; padding: 0;
+}
+.board-company {
+  font-size: 13px;
+  color: var(--violet);
+  font-weight: 500;
+  margin-top: 6px;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
 
 .team-avatar {
   width: 64px; height: 64px;
@@ -643,13 +660,16 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
   .feature-index { margin-bottom: 32px; }
   .industry-grid { grid-template-columns: repeat(2, 1fr); }
   .step-grid { grid-template-columns: repeat(2, 1fr); gap: 28px 24px; }
-  /* team: 4-col grid; 2 per row, 7th card centered */
+  /* team: 4-col grid; 2 per row, 8 cards fill evenly */
   .team-grid { grid-template-columns: repeat(4, 1fr); }
   .team-card { grid-column: span 2; }
   .team-card:nth-child(4) { grid-column: span 2; }
   .team-card:nth-child(5) { grid-column: span 2; }
   .team-card:nth-child(6) { grid-column: span 2; }
-  .team-card:nth-child(7) { grid-column: 2 / span 2; }
+  .team-card:nth-child(7) { grid-column: span 2; }
+  .team-card:nth-child(8) { grid-column: span 2; }
+  /* board: 1 per row on tablet */
+  .board-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 900px) {
   .primary-nav, .link-signin { display: none; }
@@ -691,13 +711,15 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
   .terminal-actions { grid-template-columns: 1fr; }
   .footer-meta { flex-direction: column; }
-  /* team: single column */
+  /* team + board: single column */
   .team-grid { grid-template-columns: 1fr; }
+  .board-grid { grid-template-columns: 1fr; }
   .team-card,
   .team-card:nth-child(4),
   .team-card:nth-child(5),
   .team-card:nth-child(6),
-  .team-card:nth-child(7) { grid-column: span 1; }
+  .team-card:nth-child(7),
+  .team-card:nth-child(8) { grid-column: span 1; }
 }
 
 /* ============================================================

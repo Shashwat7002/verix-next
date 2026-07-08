@@ -228,7 +228,7 @@ export default function TeamPage() {
             >
               Built by the people
               <br />
-              who ended fraud.
+              who will end fraud.
             </h1>
             <p
               className="body-1 hero-lede reveal team-answer"

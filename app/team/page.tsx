@@ -7,18 +7,18 @@ import { StaggerContainer, StaggerCard } from "@/components/motion/StaggerGrid";
 export const metadata: Metadata = {
   title: "The Verix Team",
   description:
-    "Meet the leadership team behind Verix — the biometric credential replacing cards at the POS to end card fraud and chargebacks. CEO, President, CMO, COO, CPTO, and CSO.",
+    "Meet the leadership team behind Verix — the biometric credential replacing cards at the POS to end card fraud and chargebacks. CEO, Presidents, CMO, COO, CPTO, and CSO.",
   alternates: { canonical: "/team" },
   openGraph: {
     url: "/team",
     title: "The Verix Team — Biometric Payment Infrastructure Leadership",
     description:
-      "Six specialists building the biometric credential that ends card fraud and chargebacks at every point of sale. Meet the Verix leadership.",
+      "Seven specialists building the biometric credential that ends card fraud and chargebacks at every point of sale. Meet the Verix leadership.",
   },
   twitter: {
     title: "The Verix Team — Biometric Payment Infrastructure Leadership",
     description:
-      "Six specialists. One mandate: make biometric verification the new standard at every POS.",
+      "Seven specialists. One mandate: make biometric verification the new standard at every POS.",
   },
 };
 
@@ -64,6 +64,12 @@ const orgSchema = {
       "@type": "OrganizationRole",
       member: { "@type": "Person", name: "Shashwat Choudhary", jobTitle: "President, Technology" },
       roleName: "President, Technology",
+      startDate: "2024",
+    },
+    {
+      "@type": "OrganizationRole",
+      member: { "@type": "Person", name: "Hrittik Chatterjee", jobTitle: "President, Product" },
+      roleName: "President, Product",
       startDate: "2024",
     },
     {
@@ -140,11 +146,18 @@ const team = [
     delay: ".24s",
   },
   {
+    initials: "HC",
+    name: "Hrittik Chatterjee",
+    role: "President, Product",
+    bio: "Hrittik leads product strategy and roadmap at Verix — defining how biometric infrastructure translates into operator and consumer experiences. He bridges the gap between engineering and market, ensuring every product decision is grounded in real deployment data.",
+    delay: ".30s",
+  },
+  {
     initials: "JC",
     name: "Joshua Carson",
     role: "CSO",
     bio: "Joshua leads Verix's security posture — from liveness detection and anti-spoofing protocols to PCI DSS and GDPR+BIPA compliance frameworks. He ensures every credential Verix issues and every transaction it authorizes meets the highest global security standards.",
-    delay: ".30s",
+    delay: ".36s",
   },
 ];
 
@@ -209,8 +222,8 @@ export default function TeamPage() {
               style={{ "--rd": ".14s" } as React.CSSProperties}
             >
               Verix was co-founded by Aryan Bhardwaj and Anirudh Jaiswal
-              — with Marcelo Long, Baibhav Das, Shashwat Choudhary, and
-              Joshua Carson — to build
+              — with Marcelo Long, Baibhav Das, Shashwat Choudhary, Hrittik
+              Chatterjee, and Joshua Carson — to build
               the biometric credential that replaces cards at the point of sale
               and eliminates both card fraud and chargeback fraud.
             </p>
@@ -226,7 +239,7 @@ export default function TeamPage() {
             <p className="eyebrow">— The team</p>
             <h2 className="display-2">Who is behind Verix?</h2>
             <p className="body-1 section-sub">
-              Six operators and engineers who saw the same problem from
+              Seven operators and engineers who saw the same problem from
               different angles: the card is the attack surface. Remove the
               card, and both fraud vectors collapse.
             </p>

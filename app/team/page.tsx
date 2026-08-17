@@ -173,6 +173,7 @@ const team: TeamMember[] = [
   {
     initials: "HC",
     name: "Hrittik Chatterjee",
+    photo: "/team/hrittik-chatterjee.webp",
     role: "President, Product",
     bio: "Hrittik leads product strategy and roadmap at Verix — defining how biometric infrastructure translates into operator and consumer experiences. He bridges the gap between engineering and market, ensuring every product decision is grounded in real deployment data.",
     delay: ".30s",

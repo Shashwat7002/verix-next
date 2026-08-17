@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/motion/Reveal";
 import { StaggerContainer, StaggerCard } from "@/components/motion/StaggerGrid";
@@ -108,11 +109,31 @@ const webPageSchema = {
   },
 };
 
+type AvatarMember = {
+  initials: string;
+  name: string;
+  photo?: string;
+};
+
+type TeamMember = AvatarMember & {
+  role: string;
+  bio: string;
+  delay: string;
+};
+
+type BoardMember = AvatarMember & {
+  role: string;
+  company: string;
+  companyTitle: string;
+  bio: string;
+};
+
 /* ─── Team member data ─── */
-const team = [
+const team: TeamMember[] = [
   {
     initials: "AB",
     name: "Aryan Bhardwaj",
+    photo: "/team/aryan-bhardwaj.webp",
     role: "CEO & Co-Founder",
     bio: "Aryan leads Verix's strategy and execution across product, operations, and growth. He built Verix on a single conviction: physical commerce deserves the same fraud immunity as digital identity. Under his leadership, Verix is deploying biometric credential infrastructure at scale across retail, gaming, and hospitality.",
     delay: "0s",
@@ -120,6 +141,7 @@ const team = [
   {
     initials: "ML",
     name: "Marcelo Long",
+    photo: "/team/marcelo-long.webp",
     role: "CMO & Founder",
     bio: "Marcelo drives market positioning and operator adoption for Verix. He translates the complexity of biometric infrastructure into clear operator value — faster throughput, zero chargebacks, and verifiable compliance. His work ensures every operator understands exactly what they're getting before they sign.",
     delay: ".06s",
@@ -127,6 +149,7 @@ const team = [
   {
     initials: "BD",
     name: "Baibhav Das",
+    photo: "/team/baibhav-das.webp",
     role: "COO & Founder",
     bio: "Baibhav runs the operational engine behind Verix: deployment pipelines, operator onboarding, and cross-vertical partnerships. His background in high-throughput operations means Verix scales without losing precision — whether that's 10 terminals or 10,000.",
     delay: ".12s",
@@ -134,6 +157,7 @@ const team = [
   {
     initials: "AJ",
     name: "Anirudh Jaiswal",
+    photo: "/team/anirudh-jaiswal.webp",
     role: "CPTO & Co-Founder",
     bio: "Anirudh architects the biometric matching pipeline at the core of Verix — 380 ms end-to-end, 1-in-1,000,000 false acceptance rate, ISO 30107, NIST FRVT, and FIDO2 compliant. He leads the engineering team building the credential layer that replaces physical cards at the point of sale.",
     delay: ".18s",
@@ -141,6 +165,7 @@ const team = [
   {
     initials: "SC",
     name: "Shashwat Choudhary",
+    photo: "/team/shashwat-choudhary.webp",
     role: "President, Technology",
     bio: "Shashwat oversees Verix's commercial and strategic direction — from pilot deployments to investor relations and market expansion. He works across every vertical Verix enters, ensuring the business scales with the same precision as the technology.",
     delay: ".24s",
@@ -148,6 +173,7 @@ const team = [
   {
     initials: "HC",
     name: "Hrittik Chatterjee",
+    photo: "/team/hrittik-chatterjee.webp",
     role: "President, Product",
     bio: "Hrittik leads product strategy and roadmap at Verix — defining how biometric infrastructure translates into operator and consumer experiences. He bridges the gap between engineering and market, ensuring every product decision is grounded in real deployment data.",
     delay: ".30s",
@@ -155,6 +181,7 @@ const team = [
   {
     initials: "JC",
     name: "Joshua Carson",
+    photo: "/team/joshua-carson.webp",
     role: "CSO",
     bio: "Joshua leads Verix's security posture — from liveness detection and anti-spoofing protocols to PCI DSS and GDPR+BIPA compliance frameworks. He ensures every credential Verix issues and every transaction it authorizes meets the highest global security standards.",
     delay: ".36s",
@@ -163,10 +190,11 @@ const team = [
 
 
 /* ─── Board member data ─── */
-const boardMembers = [
+const boardMembers: BoardMember[] = [
   {
     initials: "BD",
     name: "Bibek Das",
+    photo: "/team/bibek-das.webp",
     role: "Board Member",
     company: "Visa",
     companyTitle: "Senior Director, Product Management, Strategy & Commercialization",
@@ -175,12 +203,35 @@ const boardMembers = [
   {
     initials: "AB",
     name: "Arun Bhardwaj",
+    photo: "/team/arun-bhardwaj.webp",
     role: "Board Member",
     company: "Victoria’s Secret & Co",
     companyTitle: "President, International",
     bio: "Arun leads international operations at Victoria’s Secret & Co., with nearly three decades of retail expansion experience across Asia Pacific — including senior roles at Levi Strauss & Co. and Starbucks Coffee Company. His expertise in scaling consumer-facing retail operations across global markets brings strategic depth to Verix as the company pursues enterprise deployment across hospitality, fashion, and multi-location retail verticals.",
   },
 ];
+
+function TeamAvatar({ member }: { member: AvatarMember }) {
+  return (
+    <div
+      className={`team-avatar${member.photo ? " has-photo" : ""}`}
+      aria-hidden="true"
+    >
+      {member.photo ? (
+        <Image
+          src={member.photo}
+          alt=""
+          width={96}
+          height={96}
+          sizes="64px"
+          className="team-avatar-img"
+        />
+      ) : (
+        member.initials
+      )}
+    </div>
+  );
+}
 
 export default function TeamPage() {
   return (
@@ -248,15 +299,13 @@ export default function TeamPage() {
           <StaggerContainer tag="ul" className="team-grid" stagger={0.07}>
             {team.map((member) => (
               <StaggerCard
-                key={member.initials}
+                key={member.name}
                 tag="li"
                 className="team-card"
                 liftY={6}
                 liftShadow="0 16px 40px rgba(91,71,224,0.11)"
               >
-                <div className="team-avatar" aria-hidden="true">
-                  {member.initials}
-                </div>
+                <TeamAvatar member={member} />
                 <h3 className="team-name">{member.name}</h3>
                 <p className="team-role">{member.role}</p>
                 <p className="team-bio">{member.bio}</p>
@@ -288,9 +337,7 @@ export default function TeamPage() {
                 liftY={6}
                 liftShadow="0 16px 40px rgba(91,71,224,0.11)"
               >
-                <div className="team-avatar" aria-hidden="true">
-                  {member.initials}
-                </div>
+                <TeamAvatar member={member} />
                 <h3 className="team-name">{member.name}</h3>
                 <p className="team-role">{member.role}</p>
                 <p className="board-company">
